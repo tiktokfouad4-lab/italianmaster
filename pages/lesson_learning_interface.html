@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>واجهة تعلم الدروس - ItalianMaster</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fitalianmas1139back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-mediterranean-gradient min-h-screen">
+    <!-- Simplified Header with Progress -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-soft sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex items-center justify-between">
+                <!-- Exit Button -->
+                <a href="home_dashboard.html" class="flex items-center p-2 rounded-lg hover:bg-surface transition-colors">
+                    <i class="fas fa-arrow-right text-primary text-xl ml-2"></i>
+                    <span class="text-sm font-medium text-text-primary">خروج</span>
+                </a>
+
+                <!-- Lesson Progress -->
+                <div class="flex-1 mx-6">
+                    <div class="flex items-center justify-between mb-2">
+                        <span class="text-sm font-medium text-text-primary">الدرس ١: التحيات الأساسية</span>
+                        <span class="text-sm text-text-secondary">٧/١٠</span>
+                    </div>
+                    <div class="w-full bg-surface rounded-full h-2">
+                        <div class="bg-gradient-to-r from-primary to-accent h-2 rounded-full transition-all duration-500" style="width: 70%"></div>
+                    </div>
+                </div>
+
+                <!-- XP Counter -->
+                <div class="flex items-center bg-accent/10 rounded-lg px-3 py-2">
+                    <i class="fas fa-star text-accent ml-2"></i>
+                    <span class="text-sm font-bold text-accent" id="xpCounter">١٢٥٠</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Learning Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Lesson Card -->
+        <section class="bg-white rounded-2xl shadow-medium p-6 mb-6 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-5">
+                <svg viewBox="0 0 100 100" class="w-full h-full text-primary">
+                    <defs>
+                        <pattern id="dots" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                            <circle cx="10" cy="10" r="1" fill="currentColor"/>
+                        </pattern>
+                    </defs>
+                    <rect width="100" height="100" fill="url(#dots)"/>
+                </svg>
+            </div>
+
+            <div class="relative z-10">
+                <!-- Sentence Number -->
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
+                        <span class="text-lg font-bold text-primary" id="sentenceNumber">٧</span>
+                    </div>
+                    <p class="text-sm text-text-secondary">من أصل ١٠ جمل</p>
+                </div>
+
+                <!-- Italian Sentence -->
+                <div class="text-center mb-8">
+                    <h2 class="text-3xl font-heading font-semibold text-text-primary mb-4" id="italianSentence">
+                        Buongiorno! Come sta?
+                    </h2>
+                    
+                    <!-- Pronunciation Guide -->
+                    <div class="bg-surface rounded-lg p-4 mb-4">
+                        <p class="text-sm text-text-secondary mb-2">النطق:</p>
+                        <p class="font-mono text-lg text-primary" id="pronunciationGuide">
+                            [بوون-جور-نو! كو-مي ستا؟]
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Arabic Translation -->
+                <div class="text-center mb-8">
+                    <div class="bg-accent/10 rounded-xl p-6">
+                        <h3 class="text-xl font-heading font-medium text-text-primary mb-2" id="arabicTranslation">
+                            صباح الخير! كيف حالك؟
+                        </h3>
+                        <p class="text-sm text-text-secondary">الترجمة العربية</p>
+                    </div>
+                </div>
+
+                <!-- Contextual Image -->
+                <div class="text-center mb-8">
+                    <div class="relative inline-block">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Italian Greeting Scene" class="w-64 h-48 rounded-xl object-cover shadow-medium" id="contextImage" onerror="this.src='https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2'; this.onerror=null;" />
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent rounded-xl"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Audio Controls -->
+        <section class="bg-white rounded-xl shadow-soft p-6 mb-6">
+            <h3 class="text-lg font-heading font-medium text-text-primary mb-4 text-center">
+                <i class="fas fa-volume-up text-primary ml-2"></i>
+                التحكم في الصوت
+            </h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+                <!-- Play Button -->
+                <button id="playButton" class="flex items-center justify-center p-4 bg-primary text-white rounded-lg hover:bg-primary-600 transition-colors floating-action">
+                    <i class="fas fa-play text-xl ml-2"></i>
+                    <span class="font-medium">استمع</span>
+                </button>
+
+                <!-- Slow Speech -->
+                <button id="slowPlayButton" class="flex items-center justify-center p-4 bg-secondary text-white rounded-lg hover:bg-secondary-600 transition-colors floating-action">
+                    <i class="fas fa-turtle text-xl ml-2"></i>
+                    <span class="font-medium">بطيء</span>
+                </button>
+
+                <!-- Repeat -->
+                <button id="repeatButton" class="flex items-center justify-center p-4 bg-accent text-white rounded-lg hover:bg-accent-600 transition-colors floating-action">
+                    <i class="fas fa-redo text-xl ml-2"></i>
+                    <span class="font-medium">إعادة</span>
+                </button>
+            </div>
+
+            <!-- Voice Settings -->
+            <div class="grid grid-cols-2 gap-4">
+                <!-- Gender Selection -->
+                <div>
+                    <label class="block text-sm font-medium text-text-primary mb-2">نوع الصوت</label>
+                    <select id="voiceGender" class="w-full p-3 border border-surface rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option value="female">أنثى</option>
+                        <option value="male">ذكر</option>
+                    </select>
+                </div>
+
+                <!-- Speed Control -->
+                <div>
+                    <label class="block text-sm font-medium text-text-primary mb-2">سرعة النطق</label>
+                    <select id="speechSpeed" class="w-full p-3 border border-surface rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        <option value="0.7">بطيء</option>
+                        <option value="1" selected>عادي</option>
+                        <option value="1.3">سريع</option>
+                    </select>
+                </div>
+            </div>
+        </section>
+
+        <!-- Pronunciation Practice -->
+        <section class="bg-white rounded-xl shadow-soft p-6 mb-6">
+            <h3 class="text-lg font-heading font-medium text-text-primary mb-4 text-center">
+                <i class="fas fa-microphone text-primary ml-2"></i>
+                تدريب النطق
+            </h3>
+
+            <!-- Recording Status -->
+            <div class="text-center mb-6">
+                <div id="recordingStatus" class="hidden">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-error/10 rounded-full mb-4 animate-pulse">
+                        <i class="fas fa-microphone text-error text-2xl"></i>
+                    </div>
+                    <p class="text-sm text-error font-medium">جاري التسجيل...</p>
+                </div>
+
+                <div id="readyStatus" class>
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-4">
+                        <i class="fas fa-microphone text-primary text-2xl"></i>
+                    </div>
+                    <p class="text-sm text-text-secondary">اضغط للبدء في التسجيل</p>
+                </div>
+            </div>
+
+            <!-- Record Button -->
+            <div class="text-center mb-6">
+                <button id="recordButton" class="w-16 h-16 bg-primary text-white rounded-full shadow-strong hover:bg-primary-600 transition-all duration-200 hover:scale-105">
+                    <i class="fas fa-microphone text-xl"></i>
+                </button>
+            </div>
+
+            <!-- Pronunciation Result -->
+            <div id="pronunciationResult" class="hidden">
+                <div class="bg-success/10 rounded-lg p-4 mb-4">
+                    <div class="flex items-center justify-between mb-3">
+                        <span class="text-sm font-medium text-text-primary">نتيجة النطق</span>
+                        <div class="flex items-center">
+                            <span class="text-2xl font-bold text-success" id="pronunciationScore">٨٥٪</span>
+                            <i class="fas fa-check-circle text-success text-xl mr-2"></i>
+                        </div>
+                    </div>
+                    
+                    <!-- Score Bar -->
+                    <div class="w-full bg-surface rounded-full h-3 mb-3">
+                        <div class="bg-success h-3 rounded-full transition-all duration-1000" id="scoreBar" style="width: 85%"></div>
+                    </div>
+                    
+                    <p class="text-sm text-text-secondary" id="pronunciationFeedback">
+                        ممتاز! نطقك واضح ومفهوم. حاول التركيز على نطق حرف "R" بشكل أوضح.
+                    </p>
+                </div>
+
+                <!-- Playback Controls -->
+                <div class="grid grid-cols-2 gap-3">
+                    <button id="playOriginalButton" class="flex items-center justify-center p-3 bg-primary/10 text-primary rounded-lg hover:bg-primary/20 transition-colors">
+                        <i class="fas fa-play text-sm ml-2"></i>
+                        <span class="text-sm">الأصلي</span>
+                    </button>
+                    <button id="playUserButton" class="flex items-center justify-center p-3 bg-secondary/10 text-secondary rounded-lg hover:bg-secondary/20 transition-colors">
+                        <i class="fas fa-play text-sm ml-2"></i>
+                        <span class="text-sm">نطقك</span>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Navigation Controls -->
+        <section class="flex items-center justify-between">
+            <!-- Previous Button -->
+            <button id="prevButton" class="flex items-center p-4 bg-white rounded-xl shadow-soft hover:shadow-medium transition-all hover-scale">
+                <i class="fas fa-arrow-right text-primary text-xl ml-2"></i>
+                <span class="font-medium text-text-primary">السابق</span>
+            </button>
+
+            <!-- Sentence Counter -->
+            <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+                <div class="w-3 h-3 bg-primary rounded-full"></div>
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+                <div class="w-2 h-2 bg-surface rounded-full"></div>
+            </div>
+
+            <!-- Next Button -->
+            <button id="nextButton" class="flex items-center p-4 bg-primary text-white rounded-xl shadow-soft hover:shadow-medium transition-all hover-scale">
+                <span class="font-medium ml-2">التالي</span>
+                <i class="fas fa-arrow-left text-xl"></i>
+            </button>
+        </section>
+    </main>
+
+    <!-- XP Animation Overlay -->
+    <div id="xpAnimation" class="fixed inset-0 pointer-events-none z-50 hidden">
+        <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+            <div class="bg-accent text-white px-6 py-4 rounded-xl shadow-strong animate-bounce">
+                <div class="flex items-center">
+                    <i class="fas fa-star text-2xl ml-3"></i>
+                    <div>
+                        <div class="text-lg font-bold">+٥٠ XP</div>
+                        <div class="text-sm opacity-90">نطق ممتاز!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JavaScript for Lesson Functionality -->
+    <script>
+        // Lesson Data
+        const lessonData = [
+            {
+                italian: "Ciao! Come ti chiami?",
+                arabic: "مرحباً! ما اسمك؟",
+                pronunciation: "[تشاو! كو-مي تي كيا-مي؟]",
+                image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
+            },
+            {
+                italian: "Mi chiamo Marco. E tu?",
+                arabic: "اسمي ماركو. وأنت؟",
+                pronunciation: "[مي كيا-مو مار-كو. إي تو؟]",
+                image: "https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            },
+            {
+                italian: "Buongiorno! Come sta?",
+                arabic: "صباح الخير! كيف حالك؟",
+                pronunciation: "[بوون-جور-نو! كو-مي ستا؟]",
+                image: "https://images.pixabay.com/photo/2017/08/06/12/06/people-2591874_1280.jpg"
+            },
+            {
+                italian: "Molto bene, grazie!",
+                arabic: "بخير جداً، شكراً!",
+                pronunciation: "[مول-تو بي-ني، غرا-تسي-إي!]",
+                image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3"
+            },
+            {
+                italian: "Arrivederci! A presto!",
+                arabic: "وداعاً! أراك قريباً!",
+                pronunciation: "[أر-ري-في-دير-تشي! أ بري-ستو!]",
+                image: "https://images.pexels.com/photos/1181690/pexels-photo-1181690.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+            }
+        ];
+
+        let currentSentenceIndex = 6; // Starting at sentence 7 (0-based index)
+        let currentXP = 1250;
+        let isRecording = false;
+        let speechSynthesis = window.speechSynthesis;
+        let speechRecognition = null;
+
+        // Initialize Speech Recognition
+        if ('webkitSpeechRecognition' in window) {
+            speechRecognition = new webkitSpeechRecognition();
+            speechRecognition.continuous = false;
+            speechRecognition.interimResults = false;
+            speechRecognition.lang = 'it-IT';
+        }
+
+        // DOM Elements
+        const elements = {
+            italianSentence: document.getElementById('italianSentence'),
+            arabicTranslation: document.getElementById('arabicTranslation'),
+            pronunciationGuide: document.getElementById('pronunciationGuide'),
+            contextImage: document.getElementById('contextImage'),
+            sentenceNumber: document.getElementById('sentenceNumber'),
+            xpCounter: document.getElementById('xpCounter'),
+            playButton: document.getElementById('playButton'),
+            slowPlayButton: document.getElementById('slowPlayButton'),
+            repeatButton: document.getElementById('repeatButton'),
+            recordButton: document.getElementById('recordButton'),
+            recordingStatus: document.getElementById('recordingStatus'),
+            readyStatus: document.getElementById('readyStatus'),
+            pronunciationResult: document.getElementById('pronunciationResult'),
+            pronunciationScore: document.getElementById('pronunciationScore'),
+            scoreBar: document.getElementById('scoreBar'),
+            pronunciationFeedback: document.getElementById('pronunciationFeedback'),
+            prevButton: document.getElementById('prevButton'),
+            nextButton: document.getElementById('nextButton'),
+            xpAnimation: document.getElementById('xpAnimation'),
+            voiceGender: document.getElementById('voiceGender'),
+            speechSpeed: document.getElementById('speechSpeed')
+        };
+
+        // Update lesson content
+        function updateLessonContent() {
+            if (currentSentenceIndex < lessonData.length) {
+                const currentLesson = lessonData[currentSentenceIndex];
+                elements.italianSentence.textContent = currentLesson.italian;
+                elements.arabicTranslation.textContent = currentLesson.arabic;
+                elements.pronunciationGuide.textContent = currentLesson.pronunciation;
+                elements.contextImage.src = currentLesson.image;
+                elements.sentenceNumber.textContent = (currentSentenceIndex + 1).toLocaleString('ar-EG');
+                
+                // Update navigation buttons
+                elements.prevButton.disabled = currentSentenceIndex === 0;
+                elements.nextButton.disabled = currentSentenceIndex === lessonData.length - 1;
+                
+                // Hide pronunciation result
+                elements.pronunciationResult.classList.add('hidden');
+            }
+        }
+
+        // Text-to-Speech functionality
+        function speakText(text, rate = 1) {
+            if (speechSynthesis.speaking) {
+                speechSynthesis.cancel();
+            }
+
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = 'it-IT';
+            utterance.rate = rate;
+            
+            // Set voice based on gender selection
+            const voices = speechSynthesis.getVoices();
+            const selectedGender = elements.voiceGender.value;
+            const italianVoices = voices.filter(voice => voice.lang.includes('it'));
+            
+            if (italianVoices.length > 0) {
+                if (selectedGender === 'female') {
+                    utterance.voice = italianVoices.find(voice => voice.name.includes('Female')) || italianVoices[0];
+                } else {
+                    utterance.voice = italianVoices.find(voice => voice.name.includes('Male')) || italianVoices[0];
+                }
+            }
+
+            speechSynthesis.speak(utterance);
+        }
+
+        // Start recording
+        function startRecording() {
+            if (!speechRecognition) {
+                alert('متصفحك لا يدعم تقنية التعرف على الصوت');
+                return;
+            }
+
+            isRecording = true;
+            elements.recordingStatus.classList.remove('hidden');
+            elements.readyStatus.classList.add('hidden');
+            elements.recordButton.classList.add('bg-error', 'animate-pulse');
+            elements.recordButton.classList.remove('bg-primary');
+
+            speechRecognition.start();
+
+            speechRecognition.onresult = function(event) {
+                const transcript = event.results[0][0].transcript;
+                const confidence = event.results[0][0].confidence;
+                
+                // Calculate pronunciation score (simplified)
+                const score = Math.round(confidence * 100);
+                showPronunciationResult(score, transcript);
+                
+                // Award XP for good pronunciation
+                if (score >= 70) {
+                    awardXP(50);
+                }
+            };
+
+            speechRecognition.onerror = function(event) {
+                console.error('Speech recognition error:', event.error);
+                stopRecording();
+            };
+
+            speechRecognition.onend = function() {
+                stopRecording();
+            };
+
+            // Auto-stop after 5 seconds
+            setTimeout(() => {
+                if (isRecording) {
+                    speechRecognition.stop();
+                }
+            }, 5000);
+        }
+
+        // Stop recording
+        function stopRecording() {
+            isRecording = false;
+            elements.recordingStatus.classList.add('hidden');
+            elements.readyStatus.classList.remove('hidden');
+            elements.recordButton.classList.remove('bg-error', 'animate-pulse');
+            elements.recordButton.classList.add('bg-primary');
+        }
+
+        // Show pronunciation result
+        function showPronunciationResult(score, transcript) {
+            elements.pronunciationScore.textContent = score + '٪';
+            elements.scoreBar.style.width = score + '%';
+            
+            // Update score bar color based on performance
+            if (score >= 80) {
+                elements.scoreBar.className = 'bg-success h-3 rounded-full transition-all duration-1000';
+                elements.pronunciationFeedback.textContent = 'ممتاز! نطقك واضح ومفهوم.';
+            } else if (score >= 60) {
+                elements.scoreBar.className = 'bg-warning h-3 rounded-full transition-all duration-1000';
+                elements.pronunciationFeedback.textContent = 'جيد! يمكنك تحسين النطق أكثر.';
+            } else {
+                elements.scoreBar.className = 'bg-error h-3 rounded-full transition-all duration-1000';
+                elements.pronunciationFeedback.textContent = 'حاول مرة أخرى. استمع للنطق الصحيح أولاً.';
+            }
+
+            elements.pronunciationResult.classList.remove('hidden');
+        }
+
+        // Award XP with animation
+        function awardXP(points) {
+            currentXP += points;
+            elements.xpCounter.textContent = currentXP.toLocaleString('ar-EG');
+            
+            // Show XP animation
+            elements.xpAnimation.classList.remove('hidden');
+            setTimeout(() => {
+                elements.xpAnimation.classList.add('hidden');
+            }, 2000);
+        }
+
+        // Event Listeners
+        elements.playButton.addEventListener('click', () => {
+            const speed = parseFloat(elements.speechSpeed.value);
+            speakText(elements.italianSentence.textContent, speed);
+        });
+
+        elements.slowPlayButton.addEventListener('click', () => {
+            speakText(elements.italianSentence.textContent, 0.7);
+        });
+
+        elements.repeatButton.addEventListener('click', () => {
+            const speed = parseFloat(elements.speechSpeed.value);
+            speakText(elements.italianSentence.textContent, speed);
+        });
+
+        elements.recordButton.addEventListener('click', () => {
+            if (!isRecording) {
+                startRecording();
+            } else {
+                speechRecognition.stop();
+            }
+        });
+
+        elements.prevButton.addEventListener('click', () => {
+            if (currentSentenceIndex > 0) {
+                currentSentenceIndex--;
+                updateLessonContent();
+            }
+        });
+
+        elements.nextButton.addEventListener('click', () => {
+            if (currentSentenceIndex < lessonData.length - 1) {
+                currentSentenceIndex++;
+                updateLessonContent();
+            } else {
+                // Lesson completed
+                alert('تهانينا! لقد أكملت الدرس بنجاح!');
+                window.location.href = 'home_dashboard.html';
+            }
+        });
+
+        // Playback buttons
+        document.getElementById('playOriginalButton').addEventListener('click', () => {
+            const speed = parseFloat(elements.speechSpeed.value);
+            speakText(elements.italianSentence.textContent, speed);
+        });
+
+        document.getElementById('playUserButton').addEventListener('click', () => {
+            // Simulate user recording playback
+            alert('تشغيل تسجيلك...');
+        });
+
+        // Initialize lesson
+        updateLessonContent();
+
+        // Load voices when available
+        speechSynthesis.onvoiceschanged = function() {
+            const voices = speechSynthesis.getVoices();
+            console.log('Available voices:', voices.filter(voice => voice.lang.includes('it')));
+        };
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', (e) => {
+            switch(e.key) {
+                case ' ':
+                    e.preventDefault();
+                    elements.playButton.click();
+                    break;
+                case 'ArrowLeft':
+                    elements.nextButton.click();
+                    break;
+                case 'ArrowRight':
+                    elements.prevButton.click();
+                    break;
+                case 'r':
+                case 'R':
+                    elements.recordButton.click();
+                    break;
+            }
+        });
+
+        // Auto-save progress
+        setInterval(() => {
+            localStorage.setItem('currentLessonProgress', JSON.stringify({
+                sentenceIndex: currentSentenceIndex,
+                xp: currentXP,
+                timestamp: new Date().toISOString()
+            }));
+        }, 10000);
+
+        // Load saved progress
+        const savedProgress = localStorage.getItem('currentLessonProgress');
+        if (savedProgress) {
+            const progress = JSON.parse(savedProgress);
+            currentSentenceIndex = progress.sentenceIndex || currentSentenceIndex;
+            currentXP = progress.xp || currentXP;
+            elements.xpCounter.textContent = currentXP.toLocaleString('ar-EG');
+            updateLessonContent();
+        }
+    </script>
+</body>
+</html>

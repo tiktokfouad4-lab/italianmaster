@@ -1,0 +1,770 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مركز الألعاب التعليمية - ItalianMaster</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fitalianmas1139back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-mediterranean-gradient min-h-screen">
+    <!-- Header with Animated Logo and Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-soft sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <!-- Top Bar with Logo and Theme Toggle -->
+            <div class="flex items-center justify-between mb-4">
+                <!-- Animated Logo -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="relative">
+                        <svg class="w-12 h-12 text-primary animate-pulse" viewBox="0 0 100 100" fill="currentColor">
+                            <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" stroke="currentColor" stroke-width="2"/>
+                            <text x="50" y="58" text-anchor="middle" class="text-2xl font-bold fill-white">IT</text>
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#C4622D"/>
+                                    <stop offset="100%" style="stop-color:#E8B86D"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="absolute -top-2 -right-2 w-4 h-4 bg-success rounded-full animate-bounce"></div>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-heading font-semibold text-primary">ItalianMaster</h1>
+                        <p class="text-sm text-text-secondary animate-pulse">Gioca e Impara! العب وتعلم!</p>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-surface hover:bg-primary/10 transition-colors duration-200">
+                    <i class="fas fa-moon text-primary"></i>
+                </button>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="bg-white rounded-xl shadow-soft p-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+                    <a href="home_dashboard.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-home text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الرئيسية</span>
+                    </a>
+                    <a href="lesson_learning_interface.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-book-open text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الدروس</span>
+                    </a>
+                    <a href="assessment_and_testing_center.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-clipboard-check text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الاختبارات</span>
+                    </a>
+                    <a href="conversation_practice_simulator.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-comments text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">المحادثة</span>
+                    </a>
+                    <a href="educational_games_hub.html" class="nav-item active flex flex-col items-center p-3 rounded-lg bg-primary text-white hover-scale">
+                        <i class="fas fa-gamepad text-xl mb-2"></i>
+                        <span class="text-xs font-medium">الألعاب</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-trophy text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">المكافآت</span>
+                    </a>
+                    <a href="progress_statistics_dashboard.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-chart-bar text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الإحصائيات</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-cog text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الإعدادات</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Hero Section -->
+        <section class="bg-white rounded-2xl shadow-medium p-6 mb-6 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute top-0 left-0 w-full h-full opacity-5">
+                <svg viewBox="0 0 200 200" class="w-full h-full text-primary">
+                    <circle cx="50" cy="50" r="3" fill="currentColor" class="animate-pulse"/>
+                    <circle cx="150" cy="80" r="2" fill="currentColor" class="animate-pulse" style="animation-delay: 0.5s"/>
+                    <circle cx="100" cy="120" r="4" fill="currentColor" class="animate-pulse" style="animation-delay: 1s"/>
+                    <circle cx="30" cy="150" r="2.5" fill="currentColor" class="animate-pulse" style="animation-delay: 1.5s"/>
+                    <circle cx="170" cy="40" r="1.5" fill="currentColor" class="animate-pulse" style="animation-delay: 2s"/>
+                </svg>
+            </div>
+
+            <div class="relative z-10 text-center">
+                <div class="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-4">
+                    <i class="fas fa-gamepad text-4xl text-primary"></i>
+                </div>
+                <h2 class="text-3xl font-heading font-semibold text-text-primary mb-3">مركز الألعاب التعليمية</h2>
+                <p class="text-text-secondary mb-4">Centro Giochi Educativi</p>
+                <p class="text-lg text-text-secondary max-w-2xl mx-auto">تعلم المفردات الإيطالية من خلال الألعاب التفاعلية الممتعة واكسب نقاط الخبرة</p>
+                
+                <!-- Quick Stats -->
+                <div class="grid grid-cols-3 gap-4 mt-6 max-w-md mx-auto">
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-primary">٣</div>
+                        <div class="text-sm text-text-secondary">ألعاب متاحة</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-accent">٤٢٠</div>
+                        <div class="text-sm text-text-secondary">نقاط مكتسبة</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="text-2xl font-bold text-success">٨٧</div>
+                        <div class="text-sm text-text-secondary">كلمة متعلمة</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Games Grid -->
+        <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+            <!-- Flashcard Game -->
+            <div class="bg-white rounded-2xl shadow-soft overflow-hidden hover-scale transition-all duration-300">
+                <div class="relative h-48 bg-gradient-to-br from-primary/20 to-primary/10 overflow-hidden">
+                    <img src="https://images.unsplash.com/photo-1606092195730-5d7b9af1efc5?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Flashcard Game" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute top-4 right-4 bg-primary text-white px-3 py-1 rounded-full text-sm font-medium">
+                        مبتدئ
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <i class="fas fa-clone text-2xl"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-semibold text-text-primary mb-2">البطاقات التعليمية</h3>
+                    <p class="text-text-secondary mb-4">Carte Flash</p>
+                    <p class="text-sm text-text-secondary mb-4">اقلب البطاقات لتتعلم المفردات الإيطالية مع الترجمة العربية</p>
+                    
+                    <!-- Game Stats -->
+                    <div class="flex items-center justify-between mb-4 text-sm">
+                        <div class="flex items-center text-accent">
+                            <i class="fas fa-star ml-1"></i>
+                            <span>+٢٠ XP</span>
+                        </div>
+                        <div class="flex items-center text-text-secondary">
+                            <i class="fas fa-clock ml-1"></i>
+                            <span>٥ دقائق</span>
+                        </div>
+                        <div class="flex items-center text-success">
+                            <i class="fas fa-trophy ml-1"></i>
+                            <span>٩٢٪</span>
+                        </div>
+                    </div>
+                    
+                    <button onclick="startFlashcardGame()" class="w-full bg-primary text-white py-3 rounded-lg font-medium hover:bg-primary-600 transition-colors floating-action">
+                        ابدأ اللعب
+                    </button>
+                </div>
+            </div>
+
+            <!-- Falling Words Game -->
+            <div class="bg-white rounded-2xl shadow-soft overflow-hidden hover-scale transition-all duration-300">
+                <div class="relative h-48 bg-gradient-to-br from-secondary/20 to-secondary/10 overflow-hidden">
+                    <img src="https://images.pexels.com/photos/1591061/pexels-photo-1591061.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2" alt="Falling Words Game" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute top-4 right-4 bg-secondary text-white px-3 py-1 rounded-full text-sm font-medium">
+                        متوسط
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <i class="fas fa-meteor text-2xl"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-semibold text-text-primary mb-2">الكلمات المتساقطة</h3>
+                    <p class="text-text-secondary mb-4">Parole Cadenti</p>
+                    <p class="text-sm text-text-secondary mb-4">اصطد الكلمات الإيطالية واختر الترجمة الصحيحة قبل أن تصل للأسفل</p>
+                    
+                    <!-- Game Stats -->
+                    <div class="flex items-center justify-between mb-4 text-sm">
+                        <div class="flex items-center text-accent">
+                            <i class="fas fa-star ml-1"></i>
+                            <span>+٣٥ XP</span>
+                        </div>
+                        <div class="flex items-center text-text-secondary">
+                            <i class="fas fa-clock ml-1"></i>
+                            <span>٨ دقائق</span>
+                        </div>
+                        <div class="flex items-center text-warning">
+                            <i class="fas fa-trophy ml-1"></i>
+                            <span>٧٦٪</span>
+                        </div>
+                    </div>
+                    
+                    <button onclick="startFallingWordsGame()" class="w-full bg-secondary text-white py-3 rounded-lg font-medium hover:bg-secondary-600 transition-colors floating-action">
+                        ابدأ اللعب
+                    </button>
+                </div>
+            </div>
+
+            <!-- Memory Matching Game -->
+            <div class="bg-white rounded-2xl shadow-soft overflow-hidden hover-scale transition-all duration-300 md:col-span-2 lg:col-span-1">
+                <div class="relative h-48 bg-gradient-to-br from-accent/20 to-accent/10 overflow-hidden">
+                    <img src="https://images.pixabay.com/photo/2017/11/27/21/31/computer-2982270_1280.jpg" alt="Memory Matching Game" class="w-full h-full object-cover" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                    <div class="absolute top-4 right-4 bg-accent text-white px-3 py-1 rounded-full text-sm font-medium">
+                        متقدم
+                    </div>
+                    <div class="absolute bottom-4 left-4 text-white">
+                        <i class="fas fa-brain text-2xl"></i>
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-heading font-semibold text-text-primary mb-2">مطابقة الذاكرة</h3>
+                    <p class="text-text-secondary mb-4">Memory Match</p>
+                    <p class="text-sm text-text-secondary mb-4">اقلب البطاقات وطابق الكلمات الإيطالية مع ترجمتها العربية</p>
+                    
+                    <!-- Game Stats -->
+                    <div class="flex items-center justify-between mb-4 text-sm">
+                        <div class="flex items-center text-accent">
+                            <i class="fas fa-star ml-1"></i>
+                            <span>+٥٠ XP</span>
+                        </div>
+                        <div class="flex items-center text-text-secondary">
+                            <i class="fas fa-clock ml-1"></i>
+                            <span>١٢ دقيقة</span>
+                        </div>
+                        <div class="flex items-center text-error">
+                            <i class="fas fa-trophy ml-1"></i>
+                            <span>٦٤٪</span>
+                        </div>
+                    </div>
+                    
+                    <button onclick="startMemoryGame()" class="w-full bg-accent text-white py-3 rounded-lg font-medium hover:bg-accent-600 transition-colors floating-action">
+                        ابدأ اللعب
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Leaderboard Section -->
+        <section class="bg-white rounded-2xl shadow-medium p-6 mb-6">
+            <div class="flex items-center justify-between mb-6">
+                <h2 class="text-xl font-heading font-semibold text-text-primary">لوحة المتصدرين</h2>
+                <div class="flex items-center text-sm text-text-secondary">
+                    <i class="fas fa-calendar-week ml-1"></i>
+                    <span>هذا الأسبوع</span>
+                </div>
+            </div>
+
+            <div class="space-y-4">
+                <!-- Leaderboard Item -->
+                <div class="flex items-center p-4 bg-gradient-to-r from-primary/5 to-transparent rounded-lg">
+                    <div class="flex items-center justify-center w-10 h-10 bg-primary text-white rounded-full font-bold ml-4">
+                        ١
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Player Avatar" class="w-12 h-12 rounded-full object-cover ml-4" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="flex-1">
+                        <h3 class="font-medium text-text-primary">أحمد محمد</h3>
+                        <p class="text-sm text-text-secondary">٨٥٠ نقطة</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-primary font-bold">٩٥٪</div>
+                        <div class="text-xs text-text-secondary">معدل النجاح</div>
+                    </div>
+                </div>
+
+                <!-- Leaderboard Item -->
+                <div class="flex items-center p-4 bg-gradient-to-r from-secondary/5 to-transparent rounded-lg">
+                    <div class="flex items-center justify-center w-10 h-10 bg-secondary text-white rounded-full font-bold ml-4">
+                        ٢
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Player Avatar" class="w-12 h-12 rounded-full object-cover ml-4" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="flex-1">
+                        <h3 class="font-medium text-text-primary">فاطمة علي</h3>
+                        <p class="text-sm text-text-secondary">٧٣٠ نقطة</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-secondary font-bold">٨٩٪</div>
+                        <div class="text-xs text-text-secondary">معدل النجاح</div>
+                    </div>
+                </div>
+
+                <!-- Current User -->
+                <div class="flex items-center p-4 bg-gradient-to-r from-accent/10 to-transparent rounded-lg border-2 border-accent/20">
+                    <div class="flex items-center justify-center w-10 h-10 bg-accent text-white rounded-full font-bold ml-4">
+                        ٥
+                    </div>
+                    <img src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3" alt="Your Avatar" class="w-12 h-12 rounded-full object-cover ml-4" onerror="this.src='https://images.unsplash.com/photo-1584824486509-112e4181ff6b?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D'; this.onerror=null;" />
+                    <div class="flex-1">
+                        <h3 class="font-medium text-text-primary">أنت</h3>
+                        <p class="text-sm text-text-secondary">٤٢٠ نقطة</p>
+                    </div>
+                    <div class="text-right">
+                        <div class="text-accent font-bold">٧٨٪</div>
+                        <div class="text-xs text-text-secondary">معدل النجاح</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Achievements -->
+        <section class="bg-white rounded-2xl shadow-medium p-6">
+            <h2 class="text-xl font-heading font-semibold text-text-primary mb-6">الإنجازات الأخيرة</h2>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                <!-- Achievement Badge -->
+                <div class="flex items-center p-4 bg-success/5 rounded-lg border border-success/20">
+                    <div class="w-12 h-12 bg-success/10 rounded-full flex items-center justify-center ml-3">
+                        <i class="fas fa-medal text-success text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-text-primary">لاعب ماهر</h3>
+                        <p class="text-sm text-text-secondary">أكمل ١٠ ألعاب</p>
+                    </div>
+                </div>
+
+                <!-- Achievement Badge -->
+                <div class="flex items-center p-4 bg-primary/5 rounded-lg border border-primary/20">
+                    <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center ml-3">
+                        <i class="fas fa-fire text-primary text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-text-primary">سلسلة ذهبية</h3>
+                        <p class="text-sm text-text-secondary">٧ أيام متتالية</p>
+                    </div>
+                </div>
+
+                <!-- Achievement Badge -->
+                <div class="flex items-center p-4 bg-accent/5 rounded-lg border border-accent/20 md:col-span-2 lg:col-span-1">
+                    <div class="w-12 h-12 bg-accent/10 rounded-full flex items-center justify-center ml-3">
+                        <i class="fas fa-star text-accent text-xl"></i>
+                    </div>
+                    <div>
+                        <h3 class="font-medium text-text-primary">جامع النقاط</h3>
+                        <p class="text-sm text-text-secondary">٥٠٠ نقطة XP</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Game Modal Overlay -->
+    <div id="gameModal" class="fixed inset-0 bg-black/50 backdrop-blur-sm z-50 hidden">
+        <div class="flex items-center justify-center min-h-screen p-4">
+            <div class="bg-white rounded-2xl shadow-strong max-w-4xl w-full max-h-[90vh] overflow-hidden">
+                <!-- Game Header -->
+                <div class="flex items-center justify-between p-6 border-b border-surface">
+                    <div class="flex items-center">
+                        <h3 id="gameTitle" class="text-xl font-heading font-semibold text-text-primary ml-3">لعبة البطاقات التعليمية</h3>
+                        <div class="flex items-center text-accent">
+                            <i class="fas fa-star ml-1"></i>
+                            <span id="gameXP">+٢٠ XP</span>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <button id="pauseGame" class="p-2 rounded-lg bg-warning/10 text-warning hover:bg-warning/20 transition-colors">
+                            <i class="fas fa-pause"></i>
+                        </button>
+                        <button id="closeGame" class="p-2 rounded-lg bg-error/10 text-error hover:bg-error/20 transition-colors">
+                            <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Game Content Area -->
+                <div id="gameContent" class="p-6 overflow-y-auto" style="max-height: calc(90vh - 140px);">
+                    <!-- Game content will be dynamically loaded here -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 left-6 z-40">
+        <button onclick="showGameStats()" class="w-14 h-14 bg-primary text-white rounded-full shadow-strong flex items-center justify-center floating-action">
+            <i class="fas fa-chart-line text-xl"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript for Game Functionality -->
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const icon = themeToggle.querySelector('i');
+            if (body.classList.contains('dark')) {
+                icon.className = 'fas fa-sun text-accent';
+            } else {
+                icon.className = 'fas fa-moon text-primary';
+            }
+        });
+
+        // Game Modal Management
+        const gameModal = document.getElementById('gameModal');
+        const gameContent = document.getElementById('gameContent');
+        const gameTitle = document.getElementById('gameTitle');
+        const gameXP = document.getElementById('gameXP');
+        const closeGame = document.getElementById('closeGame');
+        const pauseGame = document.getElementById('pauseGame');
+
+        let currentGame = null;
+        let gameState = {
+            score: 0,
+            level: 1,
+            timeRemaining: 300,
+            isPaused: false
+        };
+
+        // Sample vocabulary data
+        const vocabulary = [
+            { italian: 'Ciao', arabic: 'مرحبا', category: 'greetings' },
+            { italian: 'Grazie', arabic: 'شكرا', category: 'greetings' },
+            { italian: 'Casa', arabic: 'بيت', category: 'home' },
+            { italian: 'Famiglia', arabic: 'عائلة', category: 'family' },
+            { italian: 'Amore', arabic: 'حب', category: 'emotions' },
+            { italian: 'Acqua', arabic: 'ماء', category: 'food' },
+            { italian: 'Pane', arabic: 'خبز', category: 'food' },
+            { italian: 'Libro', arabic: 'كتاب', category: 'education' },
+            { italian: 'Scuola', arabic: 'مدرسة', category: 'education' },
+            { italian: 'Amico', arabic: 'صديق', category: 'relationships' }
+        ];
+
+        // Flashcard Game
+        function startFlashcardGame() {
+            currentGame = 'flashcard';
+            gameTitle.textContent = 'لعبة البطاقات التعليمية';
+            gameXP.textContent = '+٢٠ XP';
+            
+            gameContent.innerHTML = `
+                <div class="text-center">
+                    <div class="mb-6">
+                        <div class="text-sm text-text-secondary mb-2">البطاقة ١ من ١٠</div>
+                        <div class="w-full bg-surface rounded-full h-2">
+                            <div class="bg-primary h-2 rounded-full transition-all duration-300" style="width: 10%"></div>
+                        </div>
+                    </div>
+                    
+                    <div class="flashcard-container mb-8">
+                        <div class="flashcard bg-gradient-to-br from-primary to-primary-600 text-white rounded-2xl p-8 cursor-pointer hover-scale transition-all duration-500" onclick="flipCard(this)">
+                            <div class="flashcard-front">
+                                <div class="text-4xl font-bold mb-4">Ciao</div>
+                                <div class="text-lg opacity-80">انقر للترجمة</div>
+                            </div>
+                            <div class="flashcard-back hidden">
+                                <div class="text-4xl font-bold mb-4">مرحبا</div>
+                                <div class="text-lg opacity-80">Hello / Hi</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-4 rtl:space-x-reverse">
+                        <button class="px-6 py-3 bg-error text-white rounded-lg font-medium hover:bg-error-600 transition-colors" onclick="markCard('unknown')">
+                            <i class="fas fa-times ml-2"></i>
+                            لا أعرف
+                        </button>
+                        <button class="px-6 py-3 bg-success text-white rounded-lg font-medium hover:bg-success-600 transition-colors" onclick="markCard('known')">
+                            <i class="fas fa-check ml-2"></i>
+                            أعرف
+                        </button>
+                    </div>
+                </div>
+            `;
+            
+            gameModal.classList.remove('hidden');
+        }
+
+        // Falling Words Game
+        function startFallingWordsGame() {
+            currentGame = 'falling';
+            gameTitle.textContent = 'لعبة الكلمات المتساقطة';
+            gameXP.textContent = '+٣٥ XP';
+            
+            gameContent.innerHTML = `
+                <div class="relative">
+                    <!-- Game Stats -->
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">٠</div>
+                                <div class="text-sm text-text-secondary">النقاط</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-accent">٣</div>
+                                <div class="text-sm text-text-secondary">الأرواح</div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-secondary">٠٢:٣٠</div>
+                            <div class="text-sm text-text-secondary">الوقت المتبقي</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Game Area -->
+                    <div class="falling-game-area bg-gradient-to-b from-sky-100 to-sky-200 rounded-2xl p-6 h-96 relative overflow-hidden">
+                        <div class="falling-word absolute top-4 left-1/2 transform -translate-x-1/2 bg-white px-4 py-2 rounded-lg shadow-medium font-bold text-primary animate-bounce">
+                            Casa
+                        </div>
+                        
+                        <!-- Answer Options -->
+                        <div class="absolute bottom-4 left-0 right-0 flex justify-center space-x-3 rtl:space-x-reverse">
+                            <button class="answer-btn px-4 py-2 bg-white rounded-lg shadow-soft hover:bg-primary hover:text-white transition-colors" onclick="selectAnswer('بيت')">
+                                بيت
+                            </button>
+                            <button class="answer-btn px-4 py-2 bg-white rounded-lg shadow-soft hover:bg-primary hover:text-white transition-colors" onclick="selectAnswer('سيارة')">
+                                سيارة
+                            </button>
+                            <button class="answer-btn px-4 py-2 bg-white rounded-lg shadow-soft hover:bg-primary hover:text-white transition-colors" onclick="selectAnswer('كتاب')">
+                                كتاب
+                            </button>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center mt-6">
+                        <p class="text-text-secondary">اختر الترجمة الصحيحة للكلمة المتساقطة</p>
+                    </div>
+                </div>
+            `;
+            
+            gameModal.classList.remove('hidden');
+        }
+
+        // Memory Matching Game
+        function startMemoryGame() {
+            currentGame = 'memory';
+            gameTitle.textContent = 'لعبة مطابقة الذاكرة';
+            gameXP.textContent = '+٥٠ XP';
+            
+            gameContent.innerHTML = `
+                <div>
+                    <!-- Game Stats -->
+                    <div class="flex justify-between items-center mb-6">
+                        <div class="flex items-center space-x-4 rtl:space-x-reverse">
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-primary">٠</div>
+                                <div class="text-sm text-text-secondary">المطابقات</div>
+                            </div>
+                            <div class="text-center">
+                                <div class="text-2xl font-bold text-accent">٠</div>
+                                <div class="text-sm text-text-secondary">الحركات</div>
+                            </div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-secondary">٠٥:٠٠</div>
+                            <div class="text-sm text-text-secondary">الوقت</div>
+                        </div>
+                    </div>
+                    
+                    <!-- Memory Grid -->
+                    <div class="grid grid-cols-4 gap-3 max-w-md mx-auto">
+                        ${generateMemoryCards()}
+                    </div>
+                    
+                    <div class="text-center mt-6">
+                        <p class="text-text-secondary">اقلب البطاقات وطابق الكلمات الإيطالية مع ترجمتها العربية</p>
+                    </div>
+                </div>
+            `;
+            
+            gameModal.classList.remove('hidden');
+        }
+
+        // Generate Memory Cards
+        function generateMemoryCards() {
+            const cards = [
+                'Ciao', 'مرحبا', 'Casa', 'بيت', 'Amore', 'حب', 'Acqua', 'ماء'
+            ];
+            
+            return cards.map((card, index) => `
+                <div class="memory-card bg-primary/10 rounded-lg h-20 flex items-center justify-center cursor-pointer hover:bg-primary/20 transition-colors" onclick="flipMemoryCard(this, '${card}')">
+                    <div class="card-back">
+                        <i class="fas fa-question text-2xl text-primary"></i>
+                    </div>
+                    <div class="card-front hidden">
+                        <span class="font-bold text-primary">${card}</span>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        // Game Interaction Functions
+        function flipCard(card) {
+            const front = card.querySelector('.flashcard-front');
+            const back = card.querySelector('.flashcard-back');
+            
+            front.classList.add('hidden');
+            back.classList.remove('hidden');
+        }
+
+        function markCard(type) {
+            if (type === 'known') {
+                showCelebration('+٢٠ XP');
+                gameState.score += 20;
+            }
+            // Load next card or end game
+            setTimeout(() => {
+                // Simulate next card or game completion
+                if (Math.random() > 0.7) {
+                    endGame();
+                } else {
+                    loadNextFlashcard();
+                }
+            }, 1000);
+        }
+
+        function selectAnswer(answer) {
+            if (answer === 'بيت') {
+                showCelebration('+١٠ نقاط');
+                gameState.score += 10;
+            } else {
+                showError('إجابة خاطئة!');
+            }
+        }
+
+        function flipMemoryCard(card, value) {
+            const back = card.querySelector('.card-back');
+            const front = card.querySelector('.card-front');
+            
+            back.classList.add('hidden');
+            front.classList.remove('hidden');
+            
+            // Add to selected cards logic here
+            gameState.score += 5;
+        }
+
+        function loadNextFlashcard() {
+            const randomWord = vocabulary[Math.floor(Math.random() * vocabulary.length)];
+            const flashcard = document.querySelector('.flashcard');
+            
+            flashcard.innerHTML = `
+                <div class="flashcard-front">
+                    <div class="text-4xl font-bold mb-4">${randomWord.italian}</div>
+                    <div class="text-lg opacity-80">انقر للترجمة</div>
+                </div>
+                <div class="flashcard-back hidden">
+                    <div class="text-4xl font-bold mb-4">${randomWord.arabic}</div>
+                    <div class="text-lg opacity-80">Italian Word</div>
+                </div>
+            `;
+        }
+
+        // Game Control Functions
+        closeGame.addEventListener('click', () => {
+            gameModal.classList.add('hidden');
+            currentGame = null;
+        });
+
+        pauseGame.addEventListener('click', () => {
+            gameState.isPaused = !gameState.isPaused;
+            const icon = pauseGame.querySelector('i');
+            if (gameState.isPaused) {
+                icon.className = 'fas fa-play';
+                pauseGame.classList.remove('bg-warning/10', 'text-warning');
+                pauseGame.classList.add('bg-success/10', 'text-success');
+            } else {
+                icon.className = 'fas fa-pause';
+                pauseGame.classList.remove('bg-success/10', 'text-success');
+                pauseGame.classList.add('bg-warning/10', 'text-warning');
+            }
+        });
+
+        // Utility Functions
+        function showCelebration(message) {
+            const celebration = document.createElement('div');
+            celebration.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-success text-white px-6 py-3 rounded-lg font-bold text-lg z-50 animate-bounce';
+            celebration.textContent = message;
+            document.body.appendChild(celebration);
+            
+            setTimeout(() => {
+                celebration.remove();
+            }, 2000);
+        }
+
+        function showError(message) {
+            const error = document.createElement('div');
+            error.className = 'fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-error text-white px-6 py-3 rounded-lg font-bold text-lg z-50';
+            error.textContent = message;
+            document.body.appendChild(error);
+            
+            setTimeout(() => {
+                error.remove();
+            }, 2000);
+        }
+
+        function endGame() {
+            gameContent.innerHTML = `
+                <div class="text-center py-8">
+                    <div class="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-trophy text-4xl text-success"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold text-text-primary mb-4">تهانينا!</h3>
+                    <p class="text-text-secondary mb-6">لقد أكملت اللعبة بنجاح</p>
+                    
+                    <div class="grid grid-cols-3 gap-4 max-w-sm mx-auto mb-8">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-primary">${gameState.score}</div>
+                            <div class="text-sm text-text-secondary">النقاط</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-accent">+${gameState.score}</div>
+                            <div class="text-sm text-text-secondary">XP</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-success">٨٥٪</div>
+                            <div class="text-sm text-text-secondary">الدقة</div>
+                        </div>
+                    </div>
+                    
+                    <div class="flex justify-center space-x-4 rtl:space-x-reverse">
+                        <button class="px-6 py-3 bg-primary text-white rounded-lg font-medium hover:bg-primary-600 transition-colors" onclick="restartGame()">
+                            العب مرة أخرى
+                        </button>
+                        <button class="px-6 py-3 bg-surface text-text-primary rounded-lg font-medium hover:bg-primary/10 transition-colors" onclick="closeGame.click()">
+                            إنهاء
+                        </button>
+                    </div>
+                </div>
+            `;
+        }
+
+        function restartGame() {
+            gameState = { score: 0, level: 1, timeRemaining: 300, isPaused: false };
+            if (currentGame === 'flashcard') startFlashcardGame();
+            else if (currentGame === 'falling') startFallingWordsGame();
+            else if (currentGame === 'memory') startMemoryGame();
+        }
+
+        function showGameStats() {
+            alert('إحصائيات الألعاب:\n\nالألعاب المكتملة: ٢٣\nإجمالي النقاط: ٤٢٠\nمعدل النجاح: ٧٨٪\nأفضل نتيجة: ٩٥٪');
+        }
+
+        // Motivational phrases rotation
+        const phrases = [
+            'Gioca e Impara! العب وتعلم!',
+            'Bravo! أحسنت!',
+            'Fantastico! رائع!',
+            'Continua! استمر!'
+        ];
+        
+        let phraseIndex = 0;
+        const phraseElement = document.querySelector('header p');
+        
+        setInterval(() => {
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            phraseElement.textContent = phrases[phraseIndex];
+        }, 4000);
+
+        // Initialize page animations
+        window.addEventListener('load', () => {
+            const cards = document.querySelectorAll('.hover-scale');
+            cards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                setTimeout(() => {
+                    card.style.transition = 'all 0.5s ease-out';
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, index * 100);
+            });
+        });
+    </script>
+</body>
+</html>

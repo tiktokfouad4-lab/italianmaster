@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>إحصائيات التقدم - ItalianMaster</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fitalianmas1139back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-mediterranean-gradient min-h-screen">
+    <!-- Header with Animated Logo and Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-soft sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <!-- Top Bar with Logo and Theme Toggle -->
+            <div class="flex items-center justify-between mb-4">
+                <!-- Animated Logo -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="relative">
+                        <svg class="w-12 h-12 text-primary animate-pulse" viewBox="0 0 100 100" fill="currentColor">
+                            <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" stroke="currentColor" stroke-width="2"/>
+                            <text x="50" y="58" text-anchor="middle" class="text-2xl font-bold fill-white">IT</text>
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#C4622D"/>
+                                    <stop offset="100%" style="stop-color:#E8B86D"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="absolute -top-2 -right-2 w-4 h-4 bg-success rounded-full animate-bounce"></div>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-heading font-semibold text-primary">ItalianMaster</h1>
+                        <p class="text-sm text-text-secondary animate-pulse">Statistiche! إحصائياتك!</p>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-surface hover:bg-primary/10 transition-colors duration-200">
+                    <i class="fas fa-moon text-primary"></i>
+                </button>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="bg-white rounded-xl shadow-soft p-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+                    <a href="home_dashboard.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-home text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الرئيسية</span>
+                    </a>
+                    <a href="lesson_learning_interface.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-book-open text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الدروس</span>
+                    </a>
+                    <a href="assessment_and_testing_center.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-clipboard-check text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الاختبارات</span>
+                    </a>
+                    <a href="conversation_practice_simulator.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-comments text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">المحادثة</span>
+                    </a>
+                    <a href="educational_games_hub.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-gamepad text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الألعاب</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-trophy text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">المكافآت</span>
+                    </a>
+                    <a href="progress_statistics_dashboard.html" class="nav-item active flex flex-col items-center p-3 rounded-lg bg-primary text-white hover-scale">
+                        <i class="fas fa-chart-bar text-xl mb-2"></i>
+                        <span class="text-xs font-medium">الإحصائيات</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-cog text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الإعدادات</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Page Header -->
+        <section class="bg-white rounded-2xl shadow-medium p-6 mb-6 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                <svg viewBox="0 0 100 100" class="w-full h-full text-primary">
+                    <circle cx="20" cy="20" r="2" fill="currentColor" class="animate-pulse"/>
+                    <circle cx="40" cy="30" r="1.5" fill="currentColor" class="animate-pulse" style="animation-delay: 0.5s"/>
+                    <circle cx="60" cy="15" r="2.5" fill="currentColor" class="animate-pulse" style="animation-delay: 1s"/>
+                    <circle cx="80" cy="25" r="1" fill="currentColor" class="animate-pulse" style="animation-delay: 1.5s"/>
+                </svg>
+            </div>
+
+            <div class="relative z-10">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h2 class="text-2xl font-heading font-semibold text-text-primary mb-2">إحصائيات التقدم</h2>
+                        <p class="text-text-secondary">Statistiche del Progresso</p>
+                    </div>
+                    <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <!-- Date Filter -->
+                        <select class="px-4 py-2 bg-surface rounded-lg border border-primary/20 text-text-primary text-sm">
+                            <option>آخر ٧ أيام</option>
+                            <option>آخر شهر</option>
+                            <option>آخر ٣ أشهر</option>
+                            <option>كل الوقت</option>
+                        </select>
+                        <!-- Export Button -->
+                        <button class="px-4 py-2 bg-primary text-white rounded-lg text-sm hover:bg-primary-600 transition-colors floating-action">
+                            <i class="fas fa-download ml-2"></i>
+                            تصدير
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Key Metrics Overview -->
+        <section class="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-6">
+            <!-- Total XP -->
+            <div class="bg-white rounded-xl shadow-soft p-6 text-center hover-scale">
+                <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-star text-2xl text-primary"></i>
+                </div>
+                <div class="text-3xl font-bold text-primary mb-2">١٢٥٠</div>
+                <p class="text-sm text-text-secondary mb-2">إجمالي النقاط</p>
+                <div class="flex items-center justify-center text-xs text-success">
+                    <i class="fas fa-arrow-up ml-1"></i>
+                    +٨٥ هذا الأسبوع
+                </div>
+            </div>
+
+            <!-- Learned Sentences -->
+            <div class="bg-white rounded-xl shadow-soft p-6 text-center hover-scale">
+                <div class="w-16 h-16 bg-secondary/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-quote-right text-2xl text-secondary"></i>
+                </div>
+                <div class="text-3xl font-bold text-secondary mb-2">٢٤٧</div>
+                <p class="text-sm text-text-secondary mb-2">جملة مُتعلمة</p>
+                <div class="flex items-center justify-center text-xs text-success">
+                    <i class="fas fa-arrow-up ml-1"></i>
+                    +١٢ هذا الأسبوع
+                </div>
+            </div>
+
+            <!-- Completed Lessons -->
+            <div class="bg-white rounded-xl shadow-soft p-6 text-center hover-scale">
+                <div class="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-book text-2xl text-accent"></i>
+                </div>
+                <div class="text-3xl font-bold text-accent mb-2">٣٢</div>
+                <p class="text-sm text-text-secondary mb-2">درس مكتمل</p>
+                <div class="flex items-center justify-center text-xs text-success">
+                    <i class="fas fa-arrow-up ml-1"></i>
+                    +٣ هذا الأسبوع
+                </div>
+            </div>
+
+            <!-- Average Score -->
+            <div class="bg-white rounded-xl shadow-soft p-6 text-center hover-scale">
+                <div class="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-chart-line text-2xl text-success"></i>
+                </div>
+                <div class="text-3xl font-bold text-success mb-2">٨٧٪</div>
+                <p class="text-sm text-text-secondary mb-2">متوسط النتائج</p>
+                <div class="flex items-center justify-center text-xs text-success">
+                    <i class="fas fa-arrow-up ml-1"></i>
+                    +٥٪ هذا الشهر
+                </div>
+            </div>
+        </section>
+
+        <!-- Charts Section -->
+        <section class="grid lg:grid-cols-2 gap-6 mb-6">
+            <!-- XP Progress Chart -->
+            <div class="bg-white rounded-2xl shadow-medium p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-heading font-semibold text-text-primary">تطور النقاط</h3>
+                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                        <button class="px-3 py-1 bg-primary text-white rounded-lg text-xs">أسبوعي</button>
+                        <button class="px-3 py-1 bg-surface text-text-secondary rounded-lg text-xs hover:bg-primary/10">شهري</button>
+                    </div>
+                </div>
+                
+                <!-- Chart Placeholder -->
+                <div class="h-64 bg-surface rounded-lg flex items-center justify-center relative overflow-hidden">
+                    <svg class="w-full h-full" viewBox="0 0 400 200">
+                        <!-- Grid Lines -->
+                        <defs>
+                            <pattern id="grid" width="40" height="20" patternUnits="userSpaceOnUse">
+                                <path d="M 40 0 L 0 0 0 20" fill="none" stroke="#f1f5f9" stroke-width="1"/>
+                            </pattern>
+                        </defs>
+                        <rect width="100%" height="100%" fill="url(#grid)"/>
+                        
+                        <!-- XP Progress Line -->
+                        <polyline fill="none" stroke="#C4622D" stroke-width="3" points="20,160 60,140 100,120 140,100 180,85 220,70 260,60 300,45 340,35 380,25"/>
+                        
+                        <!-- Data Points -->
+                        <circle cx="20" cy="160" r="4" fill="#C4622D"/>
+                        <circle cx="60" cy="140" r="4" fill="#C4622D"/>
+                        <circle cx="100" cy="120" r="4" fill="#C4622D"/>
+                        <circle cx="140" cy="100" r="4" fill="#C4622D"/>
+                        <circle cx="180" cy="85" r="4" fill="#C4622D"/>
+                        <circle cx="220" cy="70" r="4" fill="#C4622D"/>
+                        <circle cx="260" cy="60" r="4" fill="#C4622D"/>
+                        <circle cx="300" cy="45" r="4" fill="#C4622D"/>
+                        <circle cx="340" cy="35" r="4" fill="#C4622D"/>
+                        <circle cx="380" cy="25" r="4" fill="#E8B86D"/>
+                        
+                        <!-- Labels -->
+                        <text x="20" y="185" text-anchor="middle" class="text-xs fill-gray-500">السبت</text>
+                        <text x="100" y="185" text-anchor="middle" class="text-xs fill-gray-500">الاثنين</text>
+                        <text x="180" y="185" text-anchor="middle" class="text-xs fill-gray-500">الأربعاء</text>
+                        <text x="260" y="185" text-anchor="middle" class="text-xs fill-gray-500">الجمعة</text>
+                        <text x="380" y="185" text-anchor="middle" class="text-xs fill-gray-500">اليوم</text>
+                    </svg>
+                </div>
+                
+                <div class="mt-4 text-center">
+                    <p class="text-sm text-text-secondary">إجمالي النقاط المكتسبة هذا الأسبوع: <span class="font-semibold text-primary">+٨٥ XP</span></p>
+                </div>
+            </div>
+
+            <!-- Learning Streak Chart -->
+            <div class="bg-white rounded-2xl shadow-medium p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg font-heading font-semibold text-text-primary">سلسلة التعلم</h3>
+                    <div class="flex items-center">
+                        <i class="fas fa-fire text-warning text-xl ml-2"></i>
+                        <span class="text-2xl font-bold text-warning">٧</span>
+                    </div>
+                </div>
+                
+                <!-- Streak Calendar -->
+                <div class="grid grid-cols-7 gap-2 mb-4">
+                    <!-- Week Days -->
+                    <div class="text-center text-xs text-text-secondary p-2">س</div>
+                    <div class="text-center text-xs text-text-secondary p-2">ح</div>
+                    <div class="text-center text-xs text-text-secondary p-2">ن</div>
+                    <div class="text-center text-xs text-text-secondary p-2">ث</div>
+                    <div class="text-center text-xs text-text-secondary p-2">ر</div>
+                    <div class="text-center text-xs text-text-secondary p-2">خ</div>
+                    <div class="text-center text-xs text-text-secondary p-2">ج</div>
+                    
+                    <!-- Week 1 -->
+                    <div class="w-8 h-8 bg-surface rounded-lg"></div>
+                    <div class="w-8 h-8 bg-success rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div class="w-8 h-8 bg-success rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div class="w-8 h-8 bg-success rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div class="w-8 h-8 bg-success rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div class="w-8 h-8 bg-success rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    <div class="w-8 h-8 bg-success rounded-lg flex items-center justify-center">
+                        <i class="fas fa-check text-white text-xs"></i>
+                    </div>
+                    
+                    <!-- Week 2 -->
+                    <div class="w-8 h-8 bg-warning rounded-lg flex items-center justify-center animate-pulse">
+                        <i class="fas fa-fire text-white text-xs"></i>
+                    </div>
+                    <div class="w-8 h-8 bg-surface rounded-lg border-2 border-dashed border-primary"></div>
+                    <div class="w-8 h-8 bg-surface rounded-lg"></div>
+                    <div class="w-8 h-8 bg-surface rounded-lg"></div>
+                    <div class="w-8 h-8 bg-surface rounded-lg"></div>
+                    <div class="w-8 h-8 bg-surface rounded-lg"></div>
+                    <div class="w-8 h-8 bg-surface rounded-lg"></div>
+                </div>
+                
+                <div class="text-center">
+                    <p class="text-sm text-text-secondary mb-2">أطول سلسلة: <span class="font-semibold text-success">١٤ يوم</span></p>
+                    <p class="text-xs text-warning">استمر اليوم للحفاظ على سلسلتك!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Level Progress Rings -->
+        <section class="bg-white rounded-2xl shadow-medium p-6 mb-6">
+            <h3 class="text-lg font-heading font-semibold text-text-primary mb-6">تقدم المستويات</h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Beginner Level -->
+                <div class="text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <svg class="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#f1f5f9" stroke-width="8" fill="none"/>
+                            <circle cx="50" cy="50" r="40" stroke="#5D8A5A" stroke-width="8" fill="none" stroke-dasharray="251.2" stroke-dashoffset="0" class="progress-ring"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-success">١٠٠٪</span>
+                        </div>
+                    </div>
+                    <h4 class="font-medium text-text-primary mb-1">مبتدئ</h4>
+                    <p class="text-xs text-success">مكتمل</p>
+                </div>
+
+                <!-- Intermediate Level -->
+                <div class="text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <svg class="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#f1f5f9" stroke-width="8" fill="none"/>
+                            <circle cx="50" cy="50" r="40" stroke="#C4622D" stroke-width="8" fill="none" stroke-dasharray="251.2" stroke-dashoffset="87.92" class="progress-ring"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-primary">٦٥٪</span>
+                        </div>
+                    </div>
+                    <h4 class="font-medium text-text-primary mb-1">متوسط</h4>
+                    <p class="text-xs text-primary">قيد التقدم</p>
+                </div>
+
+                <!-- Advanced Level -->
+                <div class="text-center">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <svg class="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#f1f5f9" stroke-width="8" fill="none"/>
+                            <circle cx="50" cy="50" r="40" stroke="#E8B86D" stroke-width="8" fill="none" stroke-dasharray="251.2" stroke-dashoffset="226.08" class="progress-ring"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <span class="text-lg font-bold text-accent">١٠٪</span>
+                        </div>
+                    </div>
+                    <h4 class="font-medium text-text-primary mb-1">متقدم</h4>
+                    <p class="text-xs text-text-secondary">مقفل</p>
+                </div>
+
+                <!-- Professional Level -->
+                <div class="text-center opacity-50">
+                    <div class="relative w-24 h-24 mx-auto mb-4">
+                        <svg class="w-24 h-24 transform -rotate-90" viewBox="0 0 100 100">
+                            <circle cx="50" cy="50" r="40" stroke="#f1f5f9" stroke-width="8" fill="none"/>
+                            <circle cx="50" cy="50" r="40" stroke="#7A9B76" stroke-width="8" fill="none" stroke-dasharray="251.2" stroke-dashoffset="251.2" class="progress-ring"/>
+                        </svg>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <i class="fas fa-lock text-text-secondary"></i>
+                        </div>
+                    </div>
+                    <h4 class="font-medium text-text-primary mb-1">محترف</h4>
+                    <p class="text-xs text-text-secondary">مقفل</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievement Gallery -->
+        <section class="bg-white rounded-2xl shadow-medium p-6 mb-6">
+            <div class="flex items-center justify-between mb-6">
+                <h3 class="text-lg font-heading font-semibold text-text-primary">معرض الإنجازات</h3>
+                <span class="text-sm text-text-secondary">٨ من ١٥ مكتسب</span>
+            </div>
+            
+            <div class="grid grid-cols-3 md:grid-cols-5 lg:grid-cols-8 gap-4">
+                <!-- Earned Achievements -->
+                <div class="text-center hover-scale">
+                    <div class="w-16 h-16 bg-gradient-to-br from-accent to-warning rounded-full flex items-center justify-center mx-auto mb-2 shadow-medium">
+                        <i class="fas fa-graduation-cap text-white text-xl"></i>
+                    </div>
+                    <p class="text-xs text-text-primary font-medium">أول درس</p>
+                    <p class="text-xs text-success">مكتسب</p>
+                </div>
+
+                <div class="text-center hover-scale">
+                    <div class="w-16 h-16 bg-gradient-to-br from-primary to-accent rounded-full flex items-center justify-center mx-auto mb-2 shadow-medium">
+                        <i class="fas fa-fire text-white text-xl"></i>
+                    </div>
+                    <p class="text-xs text-text-primary font-medium">سلسلة ٧ أيام</p>
+                    <p class="text-xs text-success">مكتسب</p>
+                </div>
+
+                <div class="text-center hover-scale">
+                    <div class="w-16 h-16 bg-gradient-to-br from-success to-secondary rounded-full flex items-center justify-center mx-auto mb-2 shadow-medium">
+                        <i class="fas fa-star text-white text-xl"></i>
+                    </div>
+                    <p class="text-xs text-text-primary font-medium">١٠٠٠ نقطة</p>
+                    <p class="text-xs text-success">مكتسب</p>
+                </div>
+
+                <div class="text-center hover-scale">
+                    <div class="w-16 h-16 bg-gradient-to-br from-warning to-accent rounded-full flex items-center justify-center mx-auto mb-2 shadow-medium">
+                        <i class="fas fa-trophy text-white text-xl"></i>
+                    </div>
+                    <p class="text-xs text-text-primary font-medium">٥٠ جملة</p>
+                    <p class="text-xs text-success">مكتسب</p>
+                </div>
+
+                <div class="text-center hover-scale">
+                    <div class="w-16 h-16 bg-gradient-to-br from-secondary to-success rounded-full flex items-center justify-center mx-auto mb-2 shadow-medium">
+                        <i class="fas fa-medal text-white text-xl"></i>
+                    </div>
+                    <p class="text-xs text-text-primary font-medium">متعلم مثابر</p>
+                    <p class="text-xs text-success">مكتسب</p>
+                </div>
+
+                <!-- Locked Achievements -->
+                <div class="text-center opacity-50">
+                    <div class="w-16 h-16 bg-surface rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-lock text-text-secondary"></i>
+                    </div>
+                    <p class="text-xs text-text-secondary">سلسلة ٣٠ يوم</p>
+                    <p class="text-xs text-text-secondary">مقفل</p>
+                </div>
+
+                <div class="text-center opacity-50">
+                    <div class="w-16 h-16 bg-surface rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-lock text-text-secondary"></i>
+                    </div>
+                    <p class="text-xs text-text-secondary">خبير النطق</p>
+                    <p class="text-xs text-text-secondary">مقفل</p>
+                </div>
+
+                <div class="text-center opacity-50">
+                    <div class="w-16 h-16 bg-surface rounded-full flex items-center justify-center mx-auto mb-2">
+                        <i class="fas fa-lock text-text-secondary"></i>
+                    </div>
+                    <p class="text-xs text-text-secondary">ماستر إيطالي</p>
+                    <p class="text-xs text-text-secondary">مقفل</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Activity & Test History -->
+        <section class="grid lg:grid-cols-2 gap-6">
+            <!-- Recent Activity -->
+            <div class="bg-white rounded-2xl shadow-medium p-6">
+                <h3 class="text-lg font-heading font-semibold text-text-primary mb-6">النشاط الأخير</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center p-3 bg-surface rounded-lg">
+                        <div class="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center ml-3">
+                            <i class="fas fa-check text-success"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-text-primary">أكملت درس "التحيات الأساسية"</p>
+                            <p class="text-xs text-text-secondary">منذ ساعتين • +٥٠ XP</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-3 bg-surface rounded-lg">
+                        <div class="w-10 h-10 bg-warning/10 rounded-full flex items-center justify-center ml-3">
+                            <i class="fas fa-fire text-warning"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-text-primary">حافظت على سلسلة ٧ أيام</p>
+                            <p class="text-xs text-text-secondary">اليوم • +٢٠ XP</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-3 bg-surface rounded-lg">
+                        <div class="w-10 h-10 bg-primary/10 rounded-full flex items-center justify-center ml-3">
+                            <i class="fas fa-gamepad text-primary"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-text-primary">لعبت "الكلمات المتساقطة"</p>
+                            <p class="text-xs text-text-secondary">أمس • +٣٠ XP</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center p-3 bg-surface rounded-lg">
+                        <div class="w-10 h-10 bg-accent/10 rounded-full flex items-center justify-center ml-3">
+                            <i class="fas fa-trophy text-accent"></i>
+                        </div>
+                        <div class="flex-1">
+                            <p class="text-sm font-medium text-text-primary">حصلت على وسام "متعلم مثابر"</p>
+                            <p class="text-xs text-text-secondary">أمس • +١٠٠ XP</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Test History -->
+            <div class="bg-white rounded-2xl shadow-medium p-6">
+                <h3 class="text-lg font-heading font-semibold text-text-primary mb-6">تاريخ الاختبارات</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-3 bg-surface rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center ml-3">
+                                <i class="fas fa-clipboard-check text-success"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-text-primary">اختبار التحيات</p>
+                                <p class="text-xs text-text-secondary">منذ ٣ أيام</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-success">٩٢٪</div>
+                            <div class="text-xs text-success">ممتاز</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 bg-surface rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-warning/10 rounded-full flex items-center justify-center ml-3">
+                                <i class="fas fa-clipboard-check text-warning"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-text-primary">اختبار الأرقام</p>
+                                <p class="text-xs text-text-secondary">منذ أسبوع</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-warning">٧٨٪</div>
+                            <div class="text-xs text-warning">جيد</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 bg-surface rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-success/10 rounded-full flex items-center justify-center ml-3">
+                                <i class="fas fa-clipboard-check text-success"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-text-primary">اختبار العائلة</p>
+                                <p class="text-xs text-text-secondary">منذ أسبوعين</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-success">٨٥٪</div>
+                            <div class="text-xs text-success">جيد جداً</div>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-3 bg-surface rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-10 h-10 bg-error/10 rounded-full flex items-center justify-center ml-3">
+                                <i class="fas fa-clipboard-check text-error"></i>
+                            </div>
+                            <div>
+                                <p class="text-sm font-medium text-text-primary">اختبار الألوان</p>
+                                <p class="text-xs text-text-secondary">منذ ٣ أسابيع</p>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-lg font-bold text-error">٦٢٪</div>
+                            <div class="text-xs text-error">يحتاج تحسين</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-4 text-center">
+                    <a href="assessment_and_testing_center.html" class="text-primary hover:text-primary-600 text-sm font-medium">
+                        عرض جميع الاختبارات <i class="fas fa-arrow-left mr-1"></i>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <a href="lesson_learning_interface.html" class="w-14 h-14 bg-primary text-white rounded-full shadow-strong flex items-center justify-center floating-action">
+            <i class="fas fa-play text-xl"></i>
+        </a>
+    </div>
+
+    <!-- JavaScript for Interactions -->
+    <script>
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const icon = themeToggle.querySelector('i');
+            if (body.classList.contains('dark')) {
+                icon.className = 'fas fa-sun text-accent';
+            } else {
+                icon.className = 'fas fa-moon text-primary';
+            }
+        });
+
+        // Animate progress rings on load
+        window.addEventListener('load', () => {
+            const progressRings = document.querySelectorAll('.progress-ring');
+            progressRings.forEach(ring => {
+                const dashOffset = ring.style.strokeDashoffset || ring.getAttribute('stroke-dashoffset');
+                ring.style.strokeDashoffset = '251.2';
+                setTimeout(() => {
+                    ring.style.strokeDashoffset = dashOffset;
+                    ring.style.transition = 'stroke-dashoffset 1s ease-in-out';
+                }, 500);
+            });
+        });
+
+        // Motivational phrases rotation
+        const phrases = [
+            'Statistiche! إحصائياتك!',
+            'Progresso! تقدمك رائع!',
+            'Continua così! استمر هكذا!',
+            'Bravissimo! أحسنت!'
+        ];
+        
+        let phraseIndex = 0;
+        const phraseElement = document.querySelector('header p');
+        
+        setInterval(() => {
+            phraseIndex = (phraseIndex + 1) % phrases.length;
+            phraseElement.textContent = phrases[phraseIndex];
+        }, 3000);
+
+        // Chart hover effects
+        const chartPoints = document.querySelectorAll('circle[fill="#C4622D"], circle[fill="#E8B86D"]');
+        chartPoints.forEach(point => {
+            point.addEventListener('mouseenter', () => {
+                point.setAttribute('r', '6');
+                point.style.transition = 'r 0.2s ease';
+            });
+            
+            point.addEventListener('mouseleave', () => {
+                point.setAttribute('r', '4');
+            });
+        });
+
+        // Achievement hover effects
+        const achievements = document.querySelectorAll('.hover-scale');
+        achievements.forEach(achievement => {
+            achievement.addEventListener('mouseenter', () => {
+                const badge = achievement.querySelector('.shadow-medium');
+                if (badge) {
+                    badge.style.transform = 'scale(1.1)';
+                    badge.style.transition = 'transform 0.2s ease';
+                }
+            });
+            
+            achievement.addEventListener('mouseleave', () => {
+                const badge = achievement.querySelector('.shadow-medium');
+                if (badge) {
+                    badge.style.transform = 'scale(1)';
+                }
+            });
+        });
+
+        // Export functionality
+        const exportBtn = document.querySelector('button:has(.fa-download)');
+        exportBtn.addEventListener('click', () => {
+            // Simulate export process
+            exportBtn.innerHTML = '<i class="fas fa-spinner fa-spin ml-2"></i>جاري التصدير...';
+            exportBtn.disabled = true;
+            
+            setTimeout(() => {
+                exportBtn.innerHTML = '<i class="fas fa-check ml-2"></i>تم التصدير!';
+                exportBtn.classList.add('bg-success');
+                exportBtn.classList.remove('bg-primary');
+                
+                setTimeout(() => {
+                    exportBtn.innerHTML = '<i class="fas fa-download ml-2"></i>تصدير';
+                    exportBtn.classList.remove('bg-success');
+                    exportBtn.classList.add('bg-primary');
+                    exportBtn.disabled = false;
+                }, 2000);
+            }, 1500);
+        });
+    </script>
+</body>
+</html>

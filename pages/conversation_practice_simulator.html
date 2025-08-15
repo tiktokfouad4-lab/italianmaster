@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>محاكي ممارسة المحادثة - ItalianMaster</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fitalianmas1139back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-mediterranean-gradient min-h-screen">
+    <!-- Header with Animated Logo and Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-soft sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <!-- Top Bar with Logo and Theme Toggle -->
+            <div class="flex items-center justify-between mb-4">
+                <!-- Animated Logo -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="relative">
+                        <svg class="w-12 h-12 text-primary animate-pulse" viewBox="0 0 100 100" fill="currentColor">
+                            <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" stroke="currentColor" stroke-width="2"/>
+                            <text x="50" y="58" text-anchor="middle" class="text-2xl font-bold fill-white">IT</text>
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#C4622D"/>
+                                    <stop offset="100%" style="stop-color:#E8B86D"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="absolute -top-2 -right-2 w-4 h-4 bg-success rounded-full animate-bounce"></div>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-heading font-semibold text-primary">ItalianMaster</h1>
+                        <p class="text-sm text-text-secondary animate-pulse">Parla italiano! تحدث الإيطالية!</p>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-surface hover:bg-primary/10 transition-colors duration-200">
+                    <i class="fas fa-moon text-primary"></i>
+                </button>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="bg-white rounded-xl shadow-soft p-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+                    <a href="home_dashboard.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-home text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الرئيسية</span>
+                    </a>
+                    <a href="lesson_learning_interface.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-book-open text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الدروس</span>
+                    </a>
+                    <a href="assessment_and_testing_center.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-clipboard-check text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الاختبارات</span>
+                    </a>
+                    <a href="conversation_practice_simulator.html" class="nav-item active flex flex-col items-center p-3 rounded-lg bg-primary text-white hover-scale">
+                        <i class="fas fa-comments text-xl mb-2"></i>
+                        <span class="text-xs font-medium">المحادثة</span>
+                    </a>
+                    <a href="educational_games_hub.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-gamepad text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الألعاب</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-trophy text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">المكافآت</span>
+                    </a>
+                    <a href="progress_statistics_dashboard.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-chart-bar text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الإحصائيات</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-cog text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الإعدادات</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Page Header -->
+        <section class="bg-white rounded-2xl shadow-medium p-6 mb-6 relative overflow-hidden">
+            <!-- Background Pattern -->
+            <div class="absolute top-0 left-0 w-32 h-32 opacity-10">
+                <svg viewBox="0 0 100 100" class="w-full h-full text-primary">
+                    <path d="M20,20 Q50,5 80,20 Q95,50 80,80 Q50,95 20,80 Q5,50 20,20" fill="currentColor" class="animate-pulse"/>
+                </svg>
+            </div>
+
+            <div class="relative z-10">
+                <div class="text-center mb-6">
+                    <div class="inline-flex items-center justify-center w-16 h-16 bg-primary/10 rounded-full mb-4">
+                        <i class="fas fa-comments text-3xl text-primary"></i>
+                    </div>
+                    <h2 class="text-2xl font-heading font-semibold text-text-primary mb-2">محاكي ممارسة المحادثة</h2>
+                    <p class="text-text-secondary">Simulatore di Conversazione - تدرب على المحادثة الإيطالية</p>
+                </div>
+
+                <!-- Topic Selection -->
+                <div class="max-w-md mx-auto">
+                    <label class="block text-sm font-medium text-text-primary mb-2">اختر موضوع المحادثة</label>
+                    <div class="relative">
+                        <select id="topicSelect" class="w-full p-3 bg-surface border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary appearance-none">
+                            <option value="greetings">التحيات - Saluti</option>
+                            <option value="travel">السفر - Viaggi</option>
+                            <option value="food">الطعام - Cibo</option>
+                            <option value="shopping">التسوق - Shopping</option>
+                            <option value="study">الدراسة - Studio</option>
+                            <option value="work">العمل - Lavoro</option>
+                        </select>
+                        <i class="fas fa-chevron-down absolute left-3 top-1/2 transform -translate-y-1/2 text-primary pointer-events-none"></i>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Conversation Interface -->
+        <section class="grid lg:grid-cols-4 gap-6">
+            <!-- Conversation History Sidebar (Desktop) -->
+            <div class="hidden lg:block bg-white rounded-xl shadow-soft p-4">
+                <h3 class="font-heading font-medium text-text-primary mb-4 flex items-center">
+                    <i class="fas fa-history text-primary ml-2"></i>
+                    سجل المحادثات
+                </h3>
+                
+                <div class="space-y-3">
+                    <!-- History Item -->
+                    <div class="p-3 bg-surface rounded-lg hover:bg-primary/5 transition-colors cursor-pointer">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium text-text-primary">التحيات</span>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-success rounded-full ml-1"></div>
+                                <span class="text-xs text-success">٨٥٪</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-text-secondary">Ciao, come stai?</p>
+                    </div>
+
+                    <!-- History Item -->
+                    <div class="p-3 bg-surface rounded-lg hover:bg-primary/5 transition-colors cursor-pointer">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium text-text-primary">الطعام</span>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-warning rounded-full ml-1"></div>
+                                <span class="text-xs text-warning">٧٢٪</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-text-secondary">Vorrei una pizza...</p>
+                    </div>
+
+                    <!-- History Item -->
+                    <div class="p-3 bg-surface rounded-lg hover:bg-primary/5 transition-colors cursor-pointer">
+                        <div class="flex items-center justify-between mb-2">
+                            <span class="text-sm font-medium text-text-primary">السفر</span>
+                            <div class="flex items-center">
+                                <div class="w-2 h-2 bg-success rounded-full ml-1"></div>
+                                <span class="text-xs text-success">٩١٪</span>
+                            </div>
+                        </div>
+                        <p class="text-xs text-text-secondary">Dove si trova...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Chat Interface -->
+            <div class="lg:col-span-3 bg-white rounded-xl shadow-medium overflow-hidden">
+                <!-- Chat Header -->
+                <div class="bg-primary text-white p-4 flex items-center justify-between">
+                    <div class="flex items-center">
+                        <div class="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center ml-3">
+                            <i class="fas fa-robot text-lg"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-medium">مساعد المحادثة الإيطالية</h3>
+                            <p class="text-sm opacity-90" id="currentTopic">التحيات - Saluti</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-2 rtl:space-x-reverse">
+                        <button id="clearChat" class="p-2 hover:bg-white/10 rounded-lg transition-colors">
+                            <i class="fas fa-trash text-sm"></i>
+                        </button>
+                        <div class="w-3 h-3 bg-success rounded-full animate-pulse"></div>
+                    </div>
+                </div>
+
+                <!-- Chat Messages Container -->
+                <div id="chatContainer" class="h-96 overflow-y-auto p-4 space-y-4 bg-surface/30">
+                    <!-- Welcome Message -->
+                    <div class="flex items-start">
+                        <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center ml-3 flex-shrink-0">
+                            <i class="fas fa-robot text-white text-sm"></i>
+                        </div>
+                        <div class="flex-1">
+                            <div class="bg-white rounded-lg p-3 shadow-soft max-w-xs">
+                                <p class="text-text-primary font-medium mb-1">Ciao! Come stai?</p>
+                                <p class="text-text-secondary text-sm">مرحباً! كيف حالك؟</p>
+                                <button class="mt-2 text-primary hover:text-primary-600 transition-colors" onclick="playAudio('ciao-come-stai')">
+                                    <i class="fas fa-volume-up text-sm ml-1"></i>
+                                    استمع
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Input Area -->
+                <div class="p-4 bg-white border-t border-surface">
+                    <!-- Pronunciation Feedback -->
+                    <div id="pronunciationFeedback" class="hidden mb-3 p-3 rounded-lg">
+                        <div class="flex items-center justify-between">
+                            <span class="text-sm font-medium">تقييم النطق</span>
+                            <span id="pronunciationScore" class="text-sm font-bold"></span>
+                        </div>
+                        <div class="w-full bg-surface rounded-full h-2 mt-2">
+                            <div id="pronunciationBar" class="h-2 rounded-full transition-all duration-300"></div>
+                        </div>
+                    </div>
+
+                    <!-- Voice Input Controls -->
+                    <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                        <button id="micButton" class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center hover:bg-primary-600 transition-colors floating-action">
+                            <i class="fas fa-microphone text-lg"></i>
+                        </button>
+                        
+                        <div class="flex-1">
+                            <input type="text" id="textInput" placeholder="اكتب ردك هنا أو استخدم الميكروفون..." class="w-full p-3 bg-surface border border-primary/20 rounded-lg focus:ring-2 focus:ring-primary/20 focus:border-primary" />
+                        </div>
+                        
+                        <button id="sendButton" class="w-12 h-12 bg-secondary text-white rounded-full flex items-center justify-center hover:bg-secondary-600 transition-colors floating-action">
+                            <i class="fas fa-paper-plane text-lg"></i>
+                        </button>
+                    </div>
+
+                    <!-- Recording Indicator -->
+                    <div id="recordingIndicator" class="hidden mt-3 flex items-center justify-center">
+                        <div class="flex items-center space-x-2 rtl:space-x-reverse text-error">
+                            <div class="w-3 h-3 bg-error rounded-full animate-pulse"></div>
+                            <span class="text-sm font-medium">جاري التسجيل...</span>
+                            <div class="flex space-x-1 rtl:space-x-reverse">
+                                <div class="w-1 h-4 bg-error rounded animate-pulse" style="animation-delay: 0s"></div>
+                                <div class="w-1 h-4 bg-error rounded animate-pulse" style="animation-delay: 0.2s"></div>
+                                <div class="w-1 h-4 bg-error rounded animate-pulse" style="animation-delay: 0.4s"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Quick Phrases Helper -->
+        <section class="mt-6 bg-white rounded-xl shadow-soft p-6">
+            <h3 class="font-heading font-medium text-text-primary mb-4 flex items-center">
+                <i class="fas fa-lightbulb text-accent ml-2"></i>
+                عبارات مفيدة للمحادثة
+            </h3>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-4" id="quickPhrases">
+                <!-- Quick Phrase Cards will be populated by JavaScript -->
+            </div>
+        </section>
+
+        <!-- Conversation Statistics -->
+        <section class="mt-6 grid md:grid-cols-3 gap-4">
+            <!-- Today's Practice -->
+            <div class="bg-white rounded-xl shadow-soft p-4 text-center">
+                <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-calendar-day text-primary text-xl"></i>
+                </div>
+                <div class="text-2xl font-bold text-primary mb-1">١٢</div>
+                <p class="text-sm text-text-secondary">محادثة اليوم</p>
+            </div>
+
+            <!-- Average Score -->
+            <div class="bg-white rounded-xl shadow-soft p-4 text-center">
+                <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-chart-line text-success text-xl"></i>
+                </div>
+                <div class="text-2xl font-bold text-success mb-1">٨٣٪</div>
+                <p class="text-sm text-text-secondary">متوسط النطق</p>
+            </div>
+
+            <!-- Total Conversations -->
+            <div class="bg-white rounded-xl shadow-soft p-4 text-center">
+                <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <i class="fas fa-comments text-accent text-xl"></i>
+                </div>
+                <div class="text-2xl font-bold text-accent mb-1">١٤٧</div>
+                <p class="text-sm text-text-secondary">إجمالي المحادثات</p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Floating Help Button -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <button id="helpButton" class="w-14 h-14 bg-accent text-white rounded-full shadow-strong flex items-center justify-center floating-action">
+            <i class="fas fa-question text-xl"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript for Conversation Simulator -->
+    <script>
+        // Conversation data by topic
+        const conversationData = {
+            greetings: {
+                name: 'التحيات - Saluti',
+                phrases: [
+                    { italian: 'Ciao! Come stai?', arabic: 'مرحباً! كيف حالك؟' },
+                    { italian: 'Buongiorno!', arabic: 'صباح الخير!' },
+                    { italian: 'Come ti chiami?', arabic: 'ما اسمك؟' },
+                    { italian: 'Piacere di conoscerti!', arabic: 'سعيد بلقائك!' }
+                ],
+                responses: [
+                    { trigger: ['ciao', 'buongiorno'], reply: 'Ciao! È bello vederti oggi!', translation: 'مرحباً! من الجميل رؤيتك اليوم!' },
+                    { trigger: ['bene', 'molto bene'], reply: 'Che bello! Anch\'io sto bene, grazie!', translation: 'رائع! أنا أيضاً بخير، شكراً!' },
+                    { trigger: ['mi chiamo', 'sono'], reply: 'Piacere! Io sono il tuo assistente italiano.', translation: 'تشرفنا! أنا مساعدك الإيطالي.' }
+                ]
+            },
+            travel: {
+                name: 'السفر - Viaggi',
+                phrases: [
+                    { italian: 'Dove si trova la stazione?', arabic: 'أين تقع المحطة؟' },
+                    { italian: 'Quanto costa il biglietto?', arabic: 'كم يكلف التذكرة؟' },
+                    { italian: 'A che ora parte il treno?', arabic: 'متى يغادر القطار؟' },
+                    { italian: 'Scusi, può aiutarmi?', arabic: 'عذراً، هل يمكنك مساعدتي؟' }
+                ],
+                responses: [
+                    { trigger: ['stazione'], reply: 'La stazione è a due chilometri da qui.', translation: 'المحطة على بعد كيلومترين من هنا.' },
+                    { trigger: ['biglietto', 'costa'], reply: 'Il biglietto costa quindici euro.', translation: 'التذكرة تكلف خمسة عشر يورو.' },
+                    { trigger: ['treno', 'parte'], reply: 'Il prossimo treno parte alle tre e mezza.', translation: 'القطار التالي يغادر في الساعة الثالثة والنصف.' }
+                ]
+            },
+            food: {
+                name: 'الطعام - Cibo',
+                phrases: [
+                    { italian: 'Vorrei una pizza margherita.', arabic: 'أريد بيتزا مارغريتا.' },
+                    { italian: 'Il conto, per favore.', arabic: 'الحساب، من فضلك.' },
+                    { italian: 'Cosa mi consiglia?', arabic: 'ماذا تنصحني؟' },
+                    { italian: 'È molto buono!', arabic: 'إنه لذيذ جداً!' }
+                ],
+                responses: [
+                    { trigger: ['pizza'], reply: 'Ottima scelta! La pizza margherita è la nostra specialità.', translation: 'اختيار ممتاز! بيتزا مارغريتا هي تخصصنا.' },
+                    { trigger: ['conto'], reply: 'Certamente! Il conto è venti euro.', translation: 'بالطبع! الحساب عشرون يورو.' },
+                    { trigger: ['consiglia'], reply: 'Le consiglio la pasta alla carbonara, è deliziosa!', translation: 'أنصحك بالباستا كاربونارا، إنها لذيذة!' }
+                ]
+            },
+            shopping: {
+                name: 'التسوق - Shopping',
+                phrases: [
+                    { italian: 'Quanto costa questo?', arabic: 'كم يكلف هذا؟' },
+                    { italian: 'Posso provarlo?', arabic: 'هل يمكنني تجربته؟' },
+                    { italian: 'Avete la taglia più piccola?', arabic: 'هل لديكم مقاس أصغر؟' },
+                    { italian: 'Accettate carte di credito?', arabic: 'هل تقبلون بطاقات الائتمان؟' }
+                ],
+                responses: [
+                    { trigger: ['costa', 'prezzo'], reply: 'Questo costa cinquanta euro.', translation: 'هذا يكلف خمسين يورو.' },
+                    { trigger: ['provare', 'provarlo'], reply: 'Certo! Il camerino è là.', translation: 'بالطبع! غرفة القياس هناك.' },
+                    { trigger: ['taglia'], reply: 'Sì, abbiamo anche la taglia small.', translation: 'نعم، لدينا أيضاً المقاس الصغير.' }
+                ]
+            },
+            study: {
+                name: 'الدراسة - Studio',
+                phrases: [
+                    { italian: 'Sto studiando italiano.', arabic: 'أدرس الإيطالية.' },
+                    { italian: 'È difficile per me.', arabic: 'إنه صعب بالنسبة لي.' },
+                    { italian: 'Puoi ripetere, per favore?', arabic: 'هل يمكنك الإعادة، من فضلك؟' },
+                    { italian: 'Come si dice in italiano?', arabic: 'كيف نقول بالإيطالية؟' }
+                ],
+                responses: [
+                    { trigger: ['studio', 'studiando'], reply: 'Bravo! L\'italiano è una bella lingua.', translation: 'أحسنت! الإيطالية لغة جميلة.' },
+                    { trigger: ['difficile'], reply: 'Non preoccuparti, con la pratica diventerà più facile!', translation: 'لا تقلق، مع الممارسة ستصبح أسهل!' },
+                    { trigger: ['ripetere'], reply: 'Certamente! Ripeto: Ciao, come stai?', translation: 'بالطبع! أكرر: مرحباً، كيف حالك؟' }
+                ]
+            },
+            work: {
+                name: 'العمل - Lavoro',
+                phrases: [
+                    { italian: 'Che lavoro fai?', arabic: 'ما عملك؟' },
+                    { italian: 'Lavoro in un ufficio.', arabic: 'أعمل في مكتب.' },
+                    { italian: 'A che ora finisci?', arabic: 'متى تنتهي من العمل؟' },
+                    { italian: 'Buona giornata di lavoro!', arabic: 'يوم عمل سعيد!' }
+                ],
+                responses: [
+                    { trigger: ['lavoro'], reply: 'Io sono un assistente virtuale per l\'apprendimento!', translation: 'أنا مساعد افتراضي للتعلم!' },
+                    { trigger: ['ufficio'], reply: 'Che bello! Ti piace il tuo lavoro?', translation: 'رائع! هل تحب عملك؟' },
+                    { trigger: ['finisco'], reply: 'Io lavoro sempre per aiutarti a imparare!', translation: 'أنا أعمل دائماً لمساعدتك على التعلم!' }
+                ]
+            }
+        };
+
+        // Current conversation state
+        let currentTopic = 'greetings';
+        let isRecording = false;
+        let conversationHistory = [];
+
+        // DOM elements
+        const topicSelect = document.getElementById('topicSelect');
+        const chatContainer = document.getElementById('chatContainer');
+        const micButton = document.getElementById('micButton');
+        const textInput = document.getElementById('textInput');
+        const sendButton = document.getElementById('sendButton');
+        const recordingIndicator = document.getElementById('recordingIndicator');
+        const pronunciationFeedback = document.getElementById('pronunciationFeedback');
+        const currentTopicDisplay = document.getElementById('currentTopic');
+        const quickPhrasesContainer = document.getElementById('quickPhrases');
+
+        // Initialize conversation simulator
+        function initializeConversation() {
+            updateTopic();
+            loadQuickPhrases();
+            
+            // Event listeners
+            topicSelect.addEventListener('change', updateTopic);
+            micButton.addEventListener('click', toggleRecording);
+            sendButton.addEventListener('click', sendMessage);
+            textInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') sendMessage();
+            });
+            
+            document.getElementById('clearChat').addEventListener('click', clearChat);
+            document.getElementById('helpButton').addEventListener('click', showHelp);
+        }
+
+        // Update conversation topic
+        function updateTopic() {
+            currentTopic = topicSelect.value;
+            const topicData = conversationData[currentTopic];
+            currentTopicDisplay.textContent = topicData.name;
+            loadQuickPhrases();
+            
+            // Add topic change message
+            addSystemMessage(
+                `Perfetto! Parliamo di ${topicData.name.split(' - ')[1]}.`,
+                `رائع! دعنا نتحدث عن ${topicData.name.split(' - ')[0]}.`
+            );
+        }
+
+        // Load quick phrases for current topic
+        function loadQuickPhrases() {
+            const topicData = conversationData[currentTopic];
+            quickPhrasesContainer.innerHTML = '';
+            
+            topicData.phrases.forEach(phrase => {
+                const phraseCard = document.createElement('div');
+                phraseCard.className = 'bg-surface p-4 rounded-lg hover:bg-primary/5 transition-colors cursor-pointer hover-scale';
+                phraseCard.innerHTML = `
+                    <div class="flex items-center justify-between mb-2">
+                        <p class="font-medium text-text-primary">${phrase.italian}</p>
+                        <button class="text-primary hover:text-primary-600 transition-colors" onclick="playAudio('${phrase.italian}')">
+                            <i class="fas fa-volume-up"></i>
+                        </button>
+                    </div>
+                    <p class="text-sm text-text-secondary">${phrase.arabic}</p>
+                `;
+                phraseCard.addEventListener('click', () => {
+                    textInput.value = phrase.italian;
+                    sendMessage();
+                });
+                quickPhrasesContainer.appendChild(phraseCard);
+            });
+        }
+
+        // Toggle voice recording
+        function toggleRecording() {
+            if (isRecording) {
+                stopRecording();
+            } else {
+                startRecording();
+            }
+        }
+
+        // Start voice recording
+        function startRecording() {
+            isRecording = true;
+            micButton.innerHTML = '<i class="fas fa-stop text-lg"></i>';
+            micButton.classList.add('bg-error');
+            micButton.classList.remove('bg-primary');
+            recordingIndicator.classList.remove('hidden');
+            
+            // Simulate speech recognition
+            setTimeout(() => {
+                stopRecording();
+                // Simulate recognized text
+                const phrases = ['Ciao', 'Buongiorno', 'Come stai', 'Molto bene grazie'];
+                const randomPhrase = phrases[Math.floor(Math.random() * phrases.length)];
+                textInput.value = randomPhrase;
+                evaluatePronunciation(randomPhrase);
+            }, 2000);
+        }
+
+        // Stop voice recording
+        function stopRecording() {
+            isRecording = false;
+            micButton.innerHTML = '<i class="fas fa-microphone text-lg"></i>';
+            micButton.classList.remove('bg-error');
+            micButton.classList.add('bg-primary');
+            recordingIndicator.classList.add('hidden');
+        }
+
+        // Evaluate pronunciation
+        function evaluatePronunciation(text) {
+            const score = Math.floor(Math.random() * 30) + 70; // Random score between 70-100
+            const scoreElement = document.getElementById('pronunciationScore');
+            const barElement = document.getElementById('pronunciationBar');
+            
+            scoreElement.textContent = `${score}%`;
+            barElement.style.width = `${score}%`;
+            
+            if (score >= 85) {
+                pronunciationFeedback.className = 'mb-3 p-3 rounded-lg bg-success/10 border border-success/20';
+                barElement.className = 'h-2 rounded-full transition-all duration-300 bg-success';
+            } else if (score >= 70) {
+                pronunciationFeedback.className = 'mb-3 p-3 rounded-lg bg-warning/10 border border-warning/20';
+                barElement.className = 'h-2 rounded-full transition-all duration-300 bg-warning';
+            } else {
+                pronunciationFeedback.className = 'mb-3 p-3 rounded-lg bg-error/10 border border-error/20';
+                barElement.className = 'h-2 rounded-full transition-all duration-300 bg-error';
+            }
+            
+            pronunciationFeedback.classList.remove('hidden');
+            
+            // Hide feedback after 5 seconds
+            setTimeout(() => {
+                pronunciationFeedback.classList.add('hidden');
+            }, 5000);
+        }
+
+        // Send message
+        function sendMessage() {
+            const message = textInput.value.trim();
+            if (!message) return;
+            
+            // Add user message
+            addUserMessage(message);
+            
+            // Generate AI response
+            setTimeout(() => {
+                const response = generateResponse(message);
+                addSystemMessage(response.italian, response.arabic);
+            }, 1000);
+            
+            textInput.value = '';
+        }
+
+        // Add user message to chat
+        function addUserMessage(message) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start justify-end';
+            messageDiv.innerHTML = `
+                <div class="flex-1 max-w-xs">
+                    <div class="bg-primary text-white rounded-lg p-3 shadow-soft ml-auto">
+                        <p class="font-medium">${message}</p>
+                    </div>
+                </div>
+                <div class="w-8 h-8 bg-secondary rounded-full flex items-center justify-center mr-3 flex-shrink-0">
+                    <i class="fas fa-user text-white text-sm"></i>
+                </div>
+            `;
+            chatContainer.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        // Add system message to chat
+        function addSystemMessage(italian, arabic) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'flex items-start';
+            messageDiv.innerHTML = `
+                <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center ml-3 flex-shrink-0">
+                    <i class="fas fa-robot text-white text-sm"></i>
+                </div>
+                <div class="flex-1">
+                    <div class="bg-white rounded-lg p-3 shadow-soft max-w-xs">
+                        <p class="text-text-primary font-medium mb-1">${italian}</p>
+                        <p class="text-text-secondary text-sm">${arabic}</p>
+                        <button class="mt-2 text-primary hover:text-primary-600 transition-colors" onclick="playAudio('${italian}')">
+                            <i class="fas fa-volume-up text-sm ml-1"></i>
+                            استمع
+                        </button>
+                    </div>
+                </div>
+            `;
+            chatContainer.appendChild(messageDiv);
+            scrollToBottom();
+        }
+
+        // Generate AI response
+        function generateResponse(userMessage) {
+            const topicData = conversationData[currentTopic];
+            const lowerMessage = userMessage.toLowerCase();
+            
+            // Find matching response
+            for (const response of topicData.responses) {
+                for (const trigger of response.trigger) {
+                    if (lowerMessage.includes(trigger)) {
+                        return { italian: response.reply, arabic: response.translation };
+                    }
+                }
+            }
+            
+            // Default responses
+            const defaultResponses = [
+                { italian: 'Interessante! Dimmi di più.', arabic: 'مثير للاهتمام! أخبرني المزيد.' },
+                { italian: 'Capisco. Continua pure.', arabic: 'أفهم. تابع من فضلك.' },
+                { italian: 'Molto bene! Cosa pensi di questo?', arabic: 'جيد جداً! ما رأيك في هذا؟' }
+            ];
+            
+            return defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+        }
+
+        // Play audio (simulated)
+        function playAudio(text) {
+            // In a real implementation, this would use Web Speech API
+            console.log(`Playing audio for: ${text}`);
+            
+            // Visual feedback
+            const button = event.target.closest('button');
+            const originalIcon = button.innerHTML;
+            button.innerHTML = '<i class="fas fa-spinner fa-spin text-sm ml-1"></i> جاري التشغيل';
+            
+            setTimeout(() => {
+                button.innerHTML = originalIcon;
+            }, 2000);
+        }
+
+        // Clear chat
+        function clearChat() {
+            chatContainer.innerHTML = `
+                <div class="flex items-start">
+                    <div class="w-8 h-8 bg-primary rounded-full flex items-center justify-center ml-3 flex-shrink-0">
+                        <i class="fas fa-robot text-white text-sm"></i>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-white rounded-lg p-3 shadow-soft max-w-xs">
+                            <p class="text-text-primary font-medium mb-1">Ciao! Come stai?</p>
+                            <p class="text-text-secondary text-sm">مرحباً! كيف حالك؟</p>
+                            <button class="mt-2 text-primary hover:text-primary-600 transition-colors" onclick="playAudio('ciao-come-stai')">
+                                <i class="fas fa-volume-up text-sm ml-1"></i>
+                                استمع
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `;
+        }
+
+        // Show help
+        function showHelp() {
+            addSystemMessage(
+                'Benvenuto! Seleziona un argomento e inizia a conversare. Usa il microfono per la pronuncia!',
+                'مرحباً! اختر موضوعاً وابدأ المحادثة. استخدم الميكروفون للنطق!'
+            );
+        }
+
+        // Scroll to bottom of chat
+        function scrollToBottom() {
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark');
+            const icon = themeToggle.querySelector('i');
+            if (document.body.classList.contains('dark')) {
+                icon.className = 'fas fa-sun text-accent';
+            } else {
+                icon.className = 'fas fa-moon text-primary';
+            }
+        });
+
+        // Initialize when page loads
+        document.addEventListener('DOMContentLoaded', initializeConversation);
+    </script>
+</body>
+</html>

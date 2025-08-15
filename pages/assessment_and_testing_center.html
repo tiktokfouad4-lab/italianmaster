@@ -1,0 +1,962 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>مركز التقييم والاختبارات - ItalianMaster</title>
+    <link rel="stylesheet" href="../css/main.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet" />
+<script type="module" src="https://static.rocket.new/rocket-web.js?_cfg=https%3A%2F%2Fitalianmas1139back.builtwithrocket.new&_be=https%3A%2F%2Fapplication.rocket.new&_v=0.1.6"></script>
+</head>
+<body class="bg-mediterranean-gradient min-h-screen">
+    <!-- Header with Animated Logo and Navigation -->
+    <header class="bg-white/90 backdrop-blur-sm shadow-soft sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3">
+            <!-- Top Bar with Logo and Theme Toggle -->
+            <div class="flex items-center justify-between mb-4">
+                <!-- Animated Logo -->
+                <div class="flex items-center space-x-3 rtl:space-x-reverse">
+                    <div class="relative">
+                        <svg class="w-12 h-12 text-primary animate-pulse" viewBox="0 0 100 100" fill="currentColor">
+                            <circle cx="50" cy="50" r="45" fill="url(#logoGradient)" stroke="currentColor" stroke-width="2"/>
+                            <text x="50" y="58" text-anchor="middle" class="text-2xl font-bold fill-white">IT</text>
+                            <defs>
+                                <linearGradient id="logoGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                    <stop offset="0%" style="stop-color:#C4622D"/>
+                                    <stop offset="100%" style="stop-color:#E8B86D"/>
+                                </linearGradient>
+                            </defs>
+                        </svg>
+                        <div class="absolute -top-2 -right-2 w-4 h-4 bg-success rounded-full animate-bounce"></div>
+                    </div>
+                    <div>
+                        <h1 class="text-xl font-heading font-semibold text-primary">ItalianMaster</h1>
+                        <p class="text-sm text-text-secondary animate-pulse">Valuta il tuo italiano! اختبر إيطاليتك!</p>
+                    </div>
+                </div>
+
+                <!-- Theme Toggle -->
+                <button id="themeToggle" class="p-2 rounded-lg bg-surface hover:bg-primary/10 transition-colors duration-200">
+                    <i class="fas fa-moon text-primary"></i>
+                </button>
+            </div>
+
+            <!-- Main Navigation Menu -->
+            <nav class="bg-white rounded-xl shadow-soft p-4">
+                <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3">
+                    <a href="home_dashboard.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-home text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الرئيسية</span>
+                    </a>
+                    <a href="lesson_learning_interface.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-book-open text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الدروس</span>
+                    </a>
+                    <a href="assessment_and_testing_center.html" class="nav-item active flex flex-col items-center p-3 rounded-lg bg-primary text-white hover-scale">
+                        <i class="fas fa-clipboard-check text-xl mb-2"></i>
+                        <span class="text-xs font-medium">الاختبارات</span>
+                    </a>
+                    <a href="conversation_practice_simulator.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-comments text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">المحادثة</span>
+                    </a>
+                    <a href="educational_games_hub.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-gamepad text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الألعاب</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-trophy text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">المكافآت</span>
+                    </a>
+                    <a href="progress_statistics_dashboard.html" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-chart-bar text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الإحصائيات</span>
+                    </a>
+                    <a href="javascript:void(0)" class="nav-item flex flex-col items-center p-3 rounded-lg hover:bg-primary/10 transition-colors hover-scale">
+                        <i class="fas fa-cog text-xl mb-2 text-primary"></i>
+                        <span class="text-xs font-medium text-text-primary">الإعدادات</span>
+                    </a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-4 py-6">
+        <!-- Assessment Selection Screen -->
+        <div id="assessmentSelection" class="assessment-screen">
+            <!-- Page Header -->
+            <section class="bg-white rounded-2xl shadow-medium p-6 mb-6 relative overflow-hidden">
+                <!-- Background Pattern -->
+                <div class="absolute top-0 right-0 w-32 h-32 opacity-10">
+                    <svg viewBox="0 0 100 100" class="w-full h-full text-primary">
+                        <circle cx="20" cy="20" r="2" fill="currentColor" class="animate-pulse"/>
+                        <circle cx="40" cy="30" r="1.5" fill="currentColor" class="animate-pulse" style="animation-delay: 0.5s"/>
+                        <circle cx="60" cy="15" r="2.5" fill="currentColor" class="animate-pulse" style="animation-delay: 1s"/>
+                        <circle cx="80" cy="25" r="1" fill="currentColor" class="animate-pulse" style="animation-delay: 1.5s"/>
+                    </svg>
+                </div>
+
+                <div class="relative z-10 text-center">
+                    <div class="inline-flex items-center justify-center w-20 h-20 bg-primary/10 rounded-full mb-4">
+                        <i class="fas fa-clipboard-check text-3xl text-primary"></i>
+                    </div>
+                    <h2 class="text-2xl font-heading font-semibold text-text-primary mb-2">مركز التقييم والاختبارات</h2>
+                    <p class="text-text-secondary">Centro di Valutazione e Test</p>
+                    <p class="text-sm text-text-secondary mt-2">اختبر مهاراتك في اللغة الإيطالية واحصل على تقييم شامل</p>
+                </div>
+            </section>
+
+            <!-- Assessment Types Grid -->
+            <section class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-6">
+                <!-- Multiple Choice Test -->
+                <div class="bg-white rounded-xl shadow-soft p-6 hover-scale cursor-pointer" onclick="startAssessment('multiple-choice')">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-list-ul text-primary text-xl"></i>
+                        </div>
+                        <div class="text-sm bg-primary/10 text-primary px-2 py-1 rounded-full">١٥ دقيقة</div>
+                    </div>
+                    <h3 class="font-heading font-medium text-text-primary mb-2">اختبار الاختيار المتعدد</h3>
+                    <p class="text-sm text-text-secondary mb-4">Test a Scelta Multipla</p>
+                    <p class="text-xs text-text-secondary mb-4">٢٠ سؤال لاختبار فهم المفردات والقواعد</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-xs text-success">
+                            <i class="fas fa-star ml-1"></i>
+                            <span>مبتدئ - متوسط</span>
+                        </div>
+                        <i class="fas fa-arrow-left text-primary"></i>
+                    </div>
+                </div>
+
+                <!-- Word Ordering Test -->
+                <div class="bg-white rounded-xl shadow-soft p-6 hover-scale cursor-pointer" onclick="startAssessment('word-ordering')">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-secondary/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-sort text-secondary text-xl"></i>
+                        </div>
+                        <div class="text-sm bg-secondary/10 text-secondary px-2 py-1 rounded-full">١٠ دقائق</div>
+                    </div>
+                    <h3 class="font-heading font-medium text-text-primary mb-2">ترتيب الكلمات</h3>
+                    <p class="text-sm text-text-secondary mb-4">Ordinamento Parole</p>
+                    <p class="text-xs text-text-secondary mb-4">١٥ جملة لاختبار فهم التركيب النحوي</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-xs text-warning">
+                            <i class="fas fa-star ml-1"></i>
+                            <span>متوسط</span>
+                        </div>
+                        <i class="fas fa-arrow-left text-secondary"></i>
+                    </div>
+                </div>
+
+                <!-- Listening Comprehension -->
+                <div class="bg-white rounded-xl shadow-soft p-6 hover-scale cursor-pointer" onclick="startAssessment('listening')">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-headphones text-accent text-xl"></i>
+                        </div>
+                        <div class="text-sm bg-accent/10 text-accent px-2 py-1 rounded-full">٢٠ دقيقة</div>
+                    </div>
+                    <h3 class="font-heading font-medium text-text-primary mb-2">فهم الاستماع</h3>
+                    <p class="text-sm text-text-secondary mb-4">Comprensione Ascolto</p>
+                    <p class="text-xs text-text-secondary mb-4">١٢ مقطع صوتي لاختبار مهارات الاستماع</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-xs text-error">
+                            <i class="fas fa-star ml-1"></i>
+                            <span>متقدم</span>
+                        </div>
+                        <i class="fas fa-arrow-left text-accent"></i>
+                    </div>
+                </div>
+
+                <!-- Pronunciation Test -->
+                <div class="bg-white rounded-xl shadow-soft p-6 hover-scale cursor-pointer" onclick="startAssessment('pronunciation')">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-microphone text-success text-xl"></i>
+                        </div>
+                        <div class="text-sm bg-success/10 text-success px-2 py-1 rounded-full">١٢ دقيقة</div>
+                    </div>
+                    <h3 class="font-heading font-medium text-text-primary mb-2">اختبار النطق</h3>
+                    <p class="text-sm text-text-secondary mb-4">Test di Pronuncia</p>
+                    <p class="text-xs text-text-secondary mb-4">١٠ كلمات وجمل لتقييم دقة النطق</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-xs text-primary">
+                            <i class="fas fa-star ml-1"></i>
+                            <span>جميع المستويات</span>
+                        </div>
+                        <i class="fas fa-arrow-left text-success"></i>
+                    </div>
+                </div>
+
+                <!-- Comprehensive Test -->
+                <div class="bg-white rounded-xl shadow-soft p-6 hover-scale cursor-pointer md:col-span-2 lg:col-span-1" onclick="startAssessment('comprehensive')">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-certificate text-warning text-xl"></i>
+                        </div>
+                        <div class="text-sm bg-warning/10 text-warning px-2 py-1 rounded-full">٤٥ دقيقة</div>
+                    </div>
+                    <h3 class="font-heading font-medium text-text-primary mb-2">الاختبار الشامل</h3>
+                    <p class="text-sm text-text-secondary mb-4">Test Completo</p>
+                    <p class="text-xs text-text-secondary mb-4">اختبار شامل يغطي جميع المهارات اللغوية</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-xs text-warning">
+                            <i class="fas fa-trophy ml-1"></i>
+                            <span>تقييم كامل</span>
+                        </div>
+                        <i class="fas fa-arrow-left text-warning"></i>
+                    </div>
+                </div>
+
+                <!-- Quick Assessment -->
+                <div class="bg-white rounded-xl shadow-soft p-6 hover-scale cursor-pointer" onclick="startAssessment('quick')">
+                    <div class="flex items-center justify-between mb-4">
+                        <div class="w-12 h-12 bg-error/10 rounded-lg flex items-center justify-center">
+                            <i class="fas fa-bolt text-error text-xl"></i>
+                        </div>
+                        <div class="text-sm bg-error/10 text-error px-2 py-1 rounded-full">٥ دقائق</div>
+                    </div>
+                    <h3 class="font-heading font-medium text-text-primary mb-2">التقييم السريع</h3>
+                    <p class="text-sm text-text-secondary mb-4">Valutazione Rapida</p>
+                    <p class="text-xs text-text-secondary mb-4">١٠ أسئلة سريعة لتقييم المستوى الحالي</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center text-xs text-error">
+                            <i class="fas fa-clock ml-1"></i>
+                            <span>سريع</span>
+                        </div>
+                        <i class="fas fa-arrow-left text-error"></i>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Test Results -->
+            <section class="bg-white rounded-2xl shadow-medium p-6">
+                <div class="flex items-center justify-between mb-6">
+                    <h2 class="text-xl font-heading font-semibold text-text-primary">النتائج الأخيرة</h2>
+                    <a href="progress_statistics_dashboard.html" class="text-primary hover:text-primary-600 text-sm font-medium">
+                        عرض التفاصيل <i class="fas fa-arrow-left mr-1"></i>
+                    </a>
+                </div>
+
+                <div class="space-y-4">
+                    <!-- Test Result Item -->
+                    <div class="flex items-center p-4 bg-surface rounded-lg">
+                        <div class="w-12 h-12 bg-success/10 rounded-lg flex items-center justify-center ml-4">
+                            <i class="fas fa-list-ul text-success text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-medium text-text-primary mb-1">اختبار الاختيار المتعدد</h3>
+                            <p class="text-sm text-text-secondary mb-2">Test a Scelta Multipla</p>
+                            <div class="flex items-center">
+                                <div class="w-20 bg-surface rounded-full h-2 ml-2">
+                                    <div class="bg-success h-2 rounded-full" style="width: 85%"></div>
+                                </div>
+                                <span class="text-xs text-success">٨٥٪</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-medium text-success">ممتاز</div>
+                            <div class="text-xs text-text-secondary">أمس</div>
+                        </div>
+                    </div>
+
+                    <!-- Test Result Item -->
+                    <div class="flex items-center p-4 bg-surface rounded-lg">
+                        <div class="w-12 h-12 bg-warning/10 rounded-lg flex items-center justify-center ml-4">
+                            <i class="fas fa-microphone text-warning text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-medium text-text-primary mb-1">اختبار النطق</h3>
+                            <p class="text-sm text-text-secondary mb-2">Test di Pronuncia</p>
+                            <div class="flex items-center">
+                                <div class="w-20 bg-surface rounded-full h-2 ml-2">
+                                    <div class="bg-warning h-2 rounded-full" style="width: 72%"></div>
+                                </div>
+                                <span class="text-xs text-warning">٧٢٪</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-medium text-warning">جيد</div>
+                            <div class="text-xs text-text-secondary">منذ ٣ أيام</div>
+                        </div>
+                    </div>
+
+                    <!-- Test Result Item -->
+                    <div class="flex items-center p-4 bg-surface rounded-lg">
+                        <div class="w-12 h-12 bg-accent/10 rounded-lg flex items-center justify-center ml-4">
+                            <i class="fas fa-headphones text-accent text-xl"></i>
+                        </div>
+                        <div class="flex-1">
+                            <h3 class="font-medium text-text-primary mb-1">فهم الاستماع</h3>
+                            <p class="text-sm text-text-secondary mb-2">Comprensione Ascolto</p>
+                            <div class="flex items-center">
+                                <div class="w-20 bg-surface rounded-full h-2 ml-2">
+                                    <div class="bg-accent h-2 rounded-full" style="width: 91%"></div>
+                                </div>
+                                <span class="text-xs text-accent">٩١٪</span>
+                            </div>
+                        </div>
+                        <div class="text-right">
+                            <div class="text-sm font-medium text-accent">ممتاز</div>
+                            <div class="text-xs text-text-secondary">الأسبوع الماضي</div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <!-- Assessment Test Screen -->
+        <div id="assessmentTest" class="assessment-screen hidden">
+            <!-- Test Header -->
+            <section class="bg-white rounded-2xl shadow-medium p-6 mb-6">
+                <div class="flex items-center justify-between mb-4">
+                    <div class="flex items-center">
+                        <button onclick="exitTest()" class="p-2 rounded-lg bg-surface hover:bg-error/10 text-error transition-colors ml-3">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div>
+                            <h2 id="testTitle" class="text-xl font-heading font-semibold text-text-primary">اختبار الاختيار المتعدد</h2>
+                            <p id="testSubtitle" class="text-sm text-text-secondary">Test a Scelta Multipla</p>
+                        </div>
+                    </div>
+                    <div class="text-right">
+                        <div id="timer" class="text-2xl font-bold text-primary">١٥:٠٠</div>
+                        <div class="text-xs text-text-secondary">الوقت المتبقي</div>
+                    </div>
+                </div>
+
+                <!-- Progress Bar -->
+                <div class="mb-4">
+                    <div class="flex justify-between items-center mb-2">
+                        <span class="text-sm font-medium text-text-primary">التقدم</span>
+                        <span id="questionProgress" class="text-sm text-text-secondary">١ من ٢٠</span>
+                    </div>
+                    <div class="w-full bg-surface rounded-full h-3">
+                        <div id="progressBar" class="bg-gradient-to-r from-primary to-accent h-3 rounded-full progress-bar" style="width: 5%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Question Card -->
+            <section class="bg-white rounded-2xl shadow-medium p-6 mb-6">
+                <div id="questionContent">
+                    <!-- Multiple Choice Question -->
+                    <div id="multipleChoiceQuestion" class="question-type">
+                        <div class="mb-6">
+                            <h3 class="text-lg font-heading font-medium text-text-primary mb-4">اختر الترجمة الصحيحة للجملة التالية:</h3>
+                            <div class="bg-primary/5 rounded-lg p-4 mb-4">
+                                <p class="text-xl text-primary font-medium text-center">"Buongiorno, come sta?"</p>
+                                <button class="mt-2 p-2 rounded-lg bg-primary/10 hover:bg-primary/20 transition-colors">
+                                    <i class="fas fa-volume-up text-primary"></i>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="flex items-center p-4 bg-surface rounded-lg cursor-pointer hover:bg-primary/5 transition-colors">
+                                <input type="radio" name="answer" value="a" class="ml-3 text-primary" />
+                                <span class="text-text-primary">صباح الخير، كيف حالك؟</span>
+                            </label>
+                            <label class="flex items-center p-4 bg-surface rounded-lg cursor-pointer hover:bg-primary/5 transition-colors">
+                                <input type="radio" name="answer" value="b" class="ml-3 text-primary" />
+                                <span class="text-text-primary">مساء الخير، أين أنت؟</span>
+                            </label>
+                            <label class="flex items-center p-4 bg-surface rounded-lg cursor-pointer hover:bg-primary/5 transition-colors">
+                                <input type="radio" name="answer" value="c" class="ml-3 text-primary" />
+                                <span class="text-text-primary">أهلاً وسهلاً، ما اسمك؟</span>
+                            </label>
+                            <label class="flex items-center p-4 bg-surface rounded-lg cursor-pointer hover:bg-primary/5 transition-colors">
+                                <input type="radio" name="answer" value="d" class="ml-3 text-primary" />
+                                <span class="text-text-primary">شكراً لك، إلى اللقاء</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Word Ordering Question -->
+                    <div id="wordOrderingQuestion" class="question-type hidden">
+                        <div class="mb-6">
+                            <h3 class="text-lg font-heading font-medium text-text-primary mb-4">رتب الكلمات لتكوين جملة صحيحة:</h3>
+                            <div class="bg-accent/5 rounded-lg p-4 mb-4">
+                                <p class="text-text-secondary text-center">الترجمة: "أنا أحب البيتزا الإيطالية"</p>
+                            </div>
+                        </div>
+
+                        <div class="mb-6">
+                            <h4 class="text-sm font-medium text-text-primary mb-3">منطقة الترتيب:</h4>
+                            <div id="dropZone" class="min-h-16 border-2 border-dashed border-primary/30 rounded-lg p-4 bg-primary/5">
+                                <p class="text-text-secondary text-center text-sm">اسحب الكلمات هنا</p>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 class="text-sm font-medium text-text-primary mb-3">الكلمات المتاحة:</h4>
+                            <div class="flex flex-wrap gap-3">
+                                <div class="draggable-word bg-white border-2 border-primary/20 rounded-lg px-4 py-2 cursor-move hover:border-primary transition-colors">
+                                    italiana
+                                </div>
+                                <div class="draggable-word bg-white border-2 border-primary/20 rounded-lg px-4 py-2 cursor-move hover:border-primary transition-colors">
+                                    la
+                                </div>
+                                <div class="draggable-word bg-white border-2 border-primary/20 rounded-lg px-4 py-2 cursor-move hover:border-primary transition-colors">
+                                    pizza
+                                </div>
+                                <div class="draggable-word bg-white border-2 border-primary/20 rounded-lg px-4 py-2 cursor-move hover:border-primary transition-colors">
+                                    amo
+                                </div>
+                                <div class="draggable-word bg-white border-2 border-primary/20 rounded-lg px-4 py-2 cursor-move hover:border-primary transition-colors">
+                                    Io
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Listening Question -->
+                    <div id="listeningQuestion" class="question-type hidden">
+                        <div class="mb-6">
+                            <h3 class="text-lg font-heading font-medium text-text-primary mb-4">استمع للمقطع الصوتي واختر الإجابة الصحيحة:</h3>
+                            <div class="bg-accent/5 rounded-lg p-6 text-center">
+                                <div class="w-20 h-20 bg-accent/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-headphones text-accent text-2xl"></i>
+                                </div>
+                                <button class="bg-accent text-white px-6 py-3 rounded-lg hover:bg-accent-600 transition-colors">
+                                    <i class="fas fa-play ml-2"></i>
+                                    تشغيل المقطع الصوتي
+                                </button>
+                                <p class="text-xs text-text-secondary mt-2">يمكنك الاستماع مرتين كحد أقصى</p>
+                            </div>
+                        </div>
+
+                        <div class="space-y-3">
+                            <label class="flex items-center p-4 bg-surface rounded-lg cursor-pointer hover:bg-accent/5 transition-colors">
+                                <input type="radio" name="listening-answer" value="a" class="ml-3 text-accent" />
+                                <span class="text-text-primary">المتحدث يطلب القهوة</span>
+                            </label>
+                            <label class="flex items-center p-4 bg-surface rounded-lg cursor-pointer hover:bg-accent/5 transition-colors">
+                                <input type="radio" name="listening-answer" value="b" class="ml-3 text-accent" />
+                                <span class="text-text-primary">المتحدث يسأل عن الاتجاهات</span>
+                            </label>
+                            <label class="flex items-center p-4 bg-surface rounded-lg cursor-pointer hover:bg-accent/5 transition-colors">
+                                <input type="radio" name="listening-answer" value="c" class="ml-3 text-accent" />
+                                <span class="text-text-primary">المتحدث يحجز طاولة في مطعم</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <!-- Pronunciation Question -->
+                    <div id="pronunciationQuestion" class="question-type hidden">
+                        <div class="mb-6">
+                            <h3 class="text-lg font-heading font-medium text-text-primary mb-4">انطق الجملة التالية بوضوح:</h3>
+                            <div class="bg-success/5 rounded-lg p-4 mb-4">
+                                <p class="text-xl text-success font-medium text-center mb-2">"Grazie mille per il vostro aiuto"</p>
+                                <p class="text-text-secondary text-center text-sm">شكراً جزيلاً لمساعدتكم</p>
+                                <div class="text-center mt-3">
+                                    <button class="p-2 rounded-lg bg-success/10 hover:bg-success/20 transition-colors">
+                                        <i class="fas fa-volume-up text-success"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center">
+                            <div class="mb-6">
+                                <div id="recordingStatus" class="w-24 h-24 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                                    <i class="fas fa-microphone text-success text-2xl"></i>
+                                </div>
+                                <button id="recordButton" class="bg-success text-white px-6 py-3 rounded-lg hover:bg-success-600 transition-colors">
+                                    <i class="fas fa-microphone ml-2"></i>
+                                    ابدأ التسجيل
+                                </button>
+                            </div>
+
+                            <!-- Waveform Comparison -->
+                            <div id="waveformComparison" class="hidden">
+                                <div class="grid md:grid-cols-2 gap-4 mb-4">
+                                    <div class="bg-surface rounded-lg p-4">
+                                        <h4 class="text-sm font-medium text-text-primary mb-2">النطق المرجعي</h4>
+                                        <div class="h-16 bg-success/10 rounded flex items-center justify-center">
+                                            <svg class="w-full h-8" viewBox="0 0 200 32">
+                                                <path d="M0,16 Q50,8 100,16 T200,16" stroke="currentColor" fill="none" class="text-success"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                    <div class="bg-surface rounded-lg p-4">
+                                        <h4 class="text-sm font-medium text-text-primary mb-2">نطقك</h4>
+                                        <div class="h-16 bg-primary/10 rounded flex items-center justify-center">
+                                            <svg class="w-full h-8" viewBox="0 0 200 32">
+                                                <path d="M0,16 Q45,12 95,16 T190,16" stroke="currentColor" fill="none" class="text-primary"/>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="text-center">
+                                    <div class="text-2xl font-bold text-success mb-2">٨٧٪</div>
+                                    <p class="text-sm text-text-secondary">دقة النطق</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Navigation Buttons -->
+            <section class="flex justify-between items-center">
+                <button id="prevButton" class="px-6 py-3 bg-surface text-text-primary rounded-lg hover:bg-primary/10 transition-colors disabled:opacity-50" disabled>
+                    <i class="fas fa-arrow-right ml-2"></i>
+                    السابق
+                </button>
+
+                <div class="flex space-x-3 rtl:space-x-reverse">
+                    <button onclick="exitTest()" class="px-6 py-3 bg-error/10 text-error rounded-lg hover:bg-error/20 transition-colors">
+                        إنهاء الاختبار
+                    </button>
+                    <button id="nextButton" class="px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-600 transition-colors">
+                        التالي
+                        <i class="fas fa-arrow-left mr-2"></i>
+                    </button>
+                </div>
+            </section>
+        </div>
+
+        <!-- Results Screen -->
+        <div id="resultsScreen" class="assessment-screen hidden">
+            <!-- Results Header -->
+            <section class="bg-white rounded-2xl shadow-medium p-6 mb-6 text-center">
+                <div class="w-20 h-20 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                    <i class="fas fa-trophy text-success text-3xl"></i>
+                </div>
+                <h2 class="text-2xl font-heading font-semibold text-text-primary mb-2">تم إنجاز الاختبار!</h2>
+                <p class="text-text-secondary">Test Completato!</p>
+            </section>
+
+            <!-- Score Summary -->
+            <section class="bg-white rounded-2xl shadow-medium p-6 mb-6">
+                <div class="text-center mb-6">
+                    <div class="text-6xl font-bold text-success mb-2">٨٥٪</div>
+                    <p class="text-lg text-text-primary font-medium">النتيجة الإجمالية</p>
+                    <p class="text-text-secondary">Punteggio Totale</p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-4">
+                    <div class="text-center p-4 bg-success/5 rounded-lg">
+                        <div class="text-2xl font-bold text-success mb-1">١٧</div>
+                        <p class="text-sm text-text-secondary">إجابات صحيحة</p>
+                    </div>
+                    <div class="text-center p-4 bg-error/5 rounded-lg">
+                        <div class="text-2xl font-bold text-error mb-1">٣</div>
+                        <p class="text-sm text-text-secondary">إجابات خاطئة</p>
+                    </div>
+                    <div class="text-center p-4 bg-accent/5 rounded-lg">
+                        <div class="text-2xl font-bold text-accent mb-1">+١٢٠</div>
+                        <p class="text-sm text-text-secondary">نقاط الخبرة</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Detailed Breakdown -->
+            <section class="bg-white rounded-2xl shadow-medium p-6 mb-6">
+                <h3 class="text-lg font-heading font-semibold text-text-primary mb-4">تفصيل النتائج</h3>
+                
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-success/20 rounded-full flex items-center justify-center ml-3">
+                                <i class="fas fa-check text-success text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary">المفردات والترجمة</p>
+                                <p class="text-sm text-text-secondary">٩/١٠ صحيح</p>
+                            </div>
+                        </div>
+                        <div class="text-success font-bold">٩٠٪</div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-warning/20 rounded-full flex items-center justify-center ml-3">
+                                <i class="fas fa-exclamation text-warning text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary">القواعد النحوية</p>
+                                <p class="text-sm text-text-secondary">٦/٨ صحيح</p>
+                            </div>
+                        </div>
+                        <div class="text-warning font-bold">٧٥٪</div>
+                    </div>
+
+                    <div class="flex items-center justify-between p-4 bg-surface rounded-lg">
+                        <div class="flex items-center">
+                            <div class="w-8 h-8 bg-success/20 rounded-full flex items-center justify-center ml-3">
+                                <i class="fas fa-check text-success text-sm"></i>
+                            </div>
+                            <div>
+                                <p class="font-medium text-text-primary">فهم النصوص</p>
+                                <p class="text-sm text-text-secondary">٢/٢ صحيح</p>
+                            </div>
+                        </div>
+                        <div class="text-success font-bold">١٠٠٪</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recommendations -->
+            <section class="bg-white rounded-2xl shadow-medium p-6 mb-6">
+                <h3 class="text-lg font-heading font-semibold text-text-primary mb-4">توصيات للتحسين</h3>
+                
+                <div class="space-y-3">
+                    <div class="flex items-start p-4 bg-accent/5 rounded-lg">
+                        <i class="fas fa-lightbulb text-accent mt-1 ml-3"></i>
+                        <div>
+                            <p class="font-medium text-text-primary mb-1">مراجعة القواعد النحوية</p>
+                            <p class="text-sm text-text-secondary">ننصح بمراجعة دروس تصريف الأفعال والضمائر</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-start p-4 bg-primary/5 rounded-lg">
+                        <i class="fas fa-book text-primary mt-1 ml-3"></i>
+                        <div>
+                            <p class="font-medium text-text-primary mb-1">ممارسة المحادثة</p>
+                            <p class="text-sm text-text-secondary">استخدم محاكي المحادثة لتحسين مهارات التواصل</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Action Buttons -->
+            <section class="flex flex-col md:flex-row gap-4">
+                <button onclick="showAssessmentSelection()" class="flex-1 px-6 py-3 bg-primary text-white rounded-lg hover:bg-primary-600 transition-colors">
+                    <i class="fas fa-redo ml-2"></i>
+                    اختبار آخر
+                </button>
+                <button onclick="reviewAnswers()" class="flex-1 px-6 py-3 bg-secondary text-white rounded-lg hover:bg-secondary-600 transition-colors">
+                    <i class="fas fa-eye ml-2"></i>
+                    مراجعة الإجابات
+                </button>
+                <a href="lesson_learning_interface.html" class="flex-1 px-6 py-3 bg-accent text-white rounded-lg hover:bg-accent-600 transition-colors text-center">
+                    <i class="fas fa-book-open ml-2"></i>
+                    متابعة التعلم
+                </a>
+            </section>
+        </div>
+    </main>
+
+    <!-- Floating Action Button -->
+    <div class="fixed bottom-6 left-6 z-50">
+        <button onclick="startQuickAssessment()" class="w-14 h-14 bg-primary text-white rounded-full shadow-strong flex items-center justify-center floating-action">
+            <i class="fas fa-bolt text-xl"></i>
+        </button>
+    </div>
+
+    <!-- JavaScript for Assessment Functionality -->
+    <script>
+        let currentQuestion = 1;
+        let totalQuestions = 20;
+        let timeRemaining = 900; // 15 minutes in seconds
+        let timerInterval;
+        let currentAssessmentType = '';
+
+        // Theme Toggle Functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const body = document.body;
+        
+        themeToggle.addEventListener('click', () => {
+            body.classList.toggle('dark');
+            const icon = themeToggle.querySelector('i');
+            if (body.classList.contains('dark')) {
+                icon.className = 'fas fa-sun text-accent';
+            } else {
+                icon.className = 'fas fa-moon text-primary';
+            }
+        });
+
+        // Assessment Management Functions
+        function startAssessment(type) {
+            currentAssessmentType = type;
+            showAssessmentTest();
+            
+            // Set assessment specific parameters
+            switch(type) {
+                case 'multiple-choice':
+                    totalQuestions = 20;
+                    timeRemaining = 900; // 15 minutes
+                    document.getElementById('testTitle').textContent = 'اختبار الاختيار المتعدد';
+                    document.getElementById('testSubtitle').textContent = 'Test a Scelta Multipla';
+                    break;
+                case 'word-ordering':
+                    totalQuestions = 15;
+                    timeRemaining = 600; // 10 minutes
+                    document.getElementById('testTitle').textContent = 'ترتيب الكلمات';
+                    document.getElementById('testSubtitle').textContent = 'Ordinamento Parole';
+                    break;
+                case 'listening':
+                    totalQuestions = 12;
+                    timeRemaining = 1200; // 20 minutes
+                    document.getElementById('testTitle').textContent = 'فهم الاستماع';
+                    document.getElementById('testSubtitle').textContent = 'Comprensione Ascolto';
+                    break;
+                case 'pronunciation':
+                    totalQuestions = 10;
+                    timeRemaining = 720; // 12 minutes
+                    document.getElementById('testTitle').textContent = 'اختبار النطق';
+                    document.getElementById('testSubtitle').textContent = 'Test di Pronuncia';
+                    break;
+                case 'quick':
+                    totalQuestions = 10;
+                    timeRemaining = 300; // 5 minutes
+                    document.getElementById('testTitle').textContent = 'التقييم السريع';
+                    document.getElementById('testSubtitle').textContent = 'Valutazione Rapida';
+                    break;
+            }
+            
+            startTimer();
+            updateProgress();
+            showQuestionType(type);
+        }
+
+        function startQuickAssessment() {
+            startAssessment('quick');
+        }
+
+        function showAssessmentSelection() {
+            document.getElementById('assessmentSelection').classList.remove('hidden');
+            document.getElementById('assessmentTest').classList.add('hidden');
+            document.getElementById('resultsScreen').classList.add('hidden');
+            stopTimer();
+        }
+
+        function showAssessmentTest() {
+            document.getElementById('assessmentSelection').classList.add('hidden');
+            document.getElementById('assessmentTest').classList.remove('hidden');
+            document.getElementById('resultsScreen').classList.add('hidden');
+        }
+
+        function showResults() {
+            document.getElementById('assessmentSelection').classList.add('hidden');
+            document.getElementById('assessmentTest').classList.add('hidden');
+            document.getElementById('resultsScreen').classList.remove('hidden');
+            stopTimer();
+        }
+
+        function showQuestionType(type) {
+            // Hide all question types
+            document.querySelectorAll('.question-type').forEach(q => q.classList.add('hidden'));
+            
+            // Show specific question type
+            switch(type) {
+                case 'multiple-choice':
+                case 'quick':
+                    document.getElementById('multipleChoiceQuestion').classList.remove('hidden');
+                    break;
+                case 'word-ordering':
+                    document.getElementById('wordOrderingQuestion').classList.remove('hidden');
+                    initializeDragAndDrop();
+                    break;
+                case 'listening':
+                    document.getElementById('listeningQuestion').classList.remove('hidden');
+                    break;
+                case 'pronunciation':
+                    document.getElementById('pronunciationQuestion').classList.remove('hidden');
+                    break;
+            }
+        }
+
+        // Timer Functions
+        function startTimer() {
+            timerInterval = setInterval(() => {
+                timeRemaining--;
+                updateTimerDisplay();
+                
+                if (timeRemaining <= 0) {
+                    finishTest();
+                }
+            }, 1000);
+        }
+
+        function stopTimer() {
+            if (timerInterval) {
+                clearInterval(timerInterval);
+            }
+        }
+
+        function updateTimerDisplay() {
+            const minutes = Math.floor(timeRemaining / 60);
+            const seconds = timeRemaining % 60;
+            const display = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+            document.getElementById('timer').textContent = display;
+            
+            // Change color when time is running low
+            const timerElement = document.getElementById('timer');
+            if (timeRemaining <= 60) {
+                timerElement.className = 'text-2xl font-bold text-error';
+            } else if (timeRemaining <= 300) {
+                timerElement.className = 'text-2xl font-bold text-warning';
+            } else {
+                timerElement.className = 'text-2xl font-bold text-primary';
+            }
+        }
+
+        // Progress Functions
+        function updateProgress() {
+            const progress = (currentQuestion / totalQuestions) * 100;
+            document.getElementById('progressBar').style.width = `${progress}%`;
+            document.getElementById('questionProgress').textContent = `${currentQuestion} من ${totalQuestions}`;
+        }
+
+        // Navigation Functions
+        function nextQuestion() {
+            if (currentQuestion < totalQuestions) {
+                currentQuestion++;
+                updateProgress();
+                // Here you would load the next question
+                simulateQuestionChange();
+            } else {
+                finishTest();
+            }
+        }
+
+        function previousQuestion() {
+            if (currentQuestion > 1) {
+                currentQuestion--;
+                updateProgress();
+                // Here you would load the previous question
+                simulateQuestionChange();
+            }
+        }
+
+        function simulateQuestionChange() {
+            // Simulate loading different question types
+            const questionTypes = ['multiple-choice', 'word-ordering', 'listening', 'pronunciation'];
+            const randomType = questionTypes[Math.floor(Math.random() * questionTypes.length)];
+            
+            if (currentAssessmentType === 'comprehensive') {
+                showQuestionType(randomType);
+            }
+            
+            // Update navigation buttons
+            document.getElementById('prevButton').disabled = currentQuestion === 1;
+            document.getElementById('nextButton').textContent = 
+                currentQuestion === totalQuestions ? 'إنهاء الاختبار' : 'التالي';
+        }
+
+        function finishTest() {
+            showResults();
+        }
+
+        function exitTest() {
+            if (confirm('هل أنت متأكد من إنهاء الاختبار؟ ستفقد تقدمك الحالي.')) {
+                showAssessmentSelection();
+                currentQuestion = 1;
+                updateProgress();
+            }
+        }
+
+        // Drag and Drop Functionality
+        function initializeDragAndDrop() {
+            const draggableWords = document.querySelectorAll('.draggable-word');
+            const dropZone = document.getElementById('dropZone');
+            
+            draggableWords.forEach(word => {
+                word.draggable = true;
+                word.addEventListener('dragstart', handleDragStart);
+            });
+            
+            dropZone.addEventListener('dragover', handleDragOver);
+            dropZone.addEventListener('drop', handleDrop);
+        }
+
+        function handleDragStart(e) {
+            e.dataTransfer.setData('text/plain', e.target.textContent);
+            e.dataTransfer.effectAllowed = 'move';
+        }
+
+        function handleDragOver(e) {
+            e.preventDefault();
+            e.dataTransfer.dropEffect = 'move';
+        }
+
+        function handleDrop(e) {
+            e.preventDefault();
+            const data = e.dataTransfer.getData('text/plain');
+            const dropZone = document.getElementById('dropZone');
+            
+            // Create word element in drop zone
+            const wordElement = document.createElement('span');
+            wordElement.textContent = data;
+            wordElement.className = 'inline-block bg-primary text-white px-3 py-1 rounded-lg mr-2 mb-2';
+            
+            // Clear placeholder text if first word
+            if (dropZone.children.length === 1 && dropZone.children[0].tagName === 'P') {
+                dropZone.innerHTML = '';
+            }
+            
+            dropZone.appendChild(wordElement);
+        }
+
+        // Recording Functionality
+        let isRecording = false;
+        let mediaRecorder;
+
+        function toggleRecording() {
+            const recordButton = document.getElementById('recordButton');
+            const recordingStatus = document.getElementById('recordingStatus');
+            
+            if (!isRecording) {
+                startRecording();
+                recordButton.innerHTML = '<i class="fas fa-stop ml-2"></i>إيقاف التسجيل';
+                recordButton.className = 'bg-error text-white px-6 py-3 rounded-lg hover:bg-error-600 transition-colors';
+                recordingStatus.className = 'w-24 h-24 bg-error/20 rounded-full flex items-center justify-center mx-auto mb-4 animate-pulse';
+                isRecording = true;
+            } else {
+                stopRecording();
+                recordButton.innerHTML = '<i class="fas fa-microphone ml-2"></i>ابدأ التسجيل';
+                recordButton.className = 'bg-success text-white px-6 py-3 rounded-lg hover:bg-success-600 transition-colors';
+                recordingStatus.className = 'w-24 h-24 bg-success/20 rounded-full flex items-center justify-center mx-auto mb-4';
+                isRecording = false;
+                
+                // Show waveform comparison
+                document.getElementById('waveformComparison').classList.remove('hidden');
+            }
+        }
+
+        function startRecording() {
+            // Simulate recording start
+            console.log('Recording started...');
+        }
+
+        function stopRecording() {
+            // Simulate recording stop and analysis
+            console.log('Recording stopped and analyzed...');
+        }
+
+        function reviewAnswers() {
+            alert('ستتم إضافة وظيفة مراجعة الإجابات قريباً');
+        }
+
+        // Event Listeners
+        document.getElementById('nextButton').addEventListener('click', nextQuestion);
+        document.getElementById('prevButton').addEventListener('click', previousQuestion);
+        document.getElementById('recordButton').addEventListener('click', toggleRecording);
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            showAssessmentSelection();
+            
+            // Motivational phrases rotation
+            const phrases = [
+                'Valuta il tuo italiano! اختبر إيطاليتك!',
+                'Bravissimo! أحسنت!',
+                'Continua così! استمر هكذا!',
+                'Ottimo lavoro! عمل ممتاز!'
+            ];
+            
+            let phraseIndex = 0;
+            const phraseElement = document.querySelector('header p');
+            
+            setInterval(() => {
+                phraseIndex = (phraseIndex + 1) % phrases.length;
+                phraseElement.textContent = phrases[phraseIndex];
+            }, 3000);
+        });
+    </script>
+</body>
+</html>
